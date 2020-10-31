@@ -20,6 +20,7 @@ class CreateItemsTable extends Migration
             $table->string('item_image2')->nullable()->comment('画像2');
             $table->string('item_image3')->nullable()->comment('画像3');
             $table->string('name')->nullable()->comment('物件名');
+            $table->string('station')->nullable()->comment('最寄り駅');
             $table->string('rent')->nullable()->comment('賃料');
             $table->string('adress')->nullable()->comment('住所');
             $table->string('age')->nullable()->comment('築年数');
