@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ExperienceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +16,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// 体験談関連
-// Route::resource('/experiences', 'App\Http\Controllers\ExperienceController');
-// 体験談の検索と一覧表
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// 体験談一覧表
 Route::get('/experiences', 'App\Http\Controllers\ExperienceController@index');
-//コントローラーの指定をしなかったのでエラーが出た
+//コントローラーの指定をしなかったのでエラーが出たのでわけてます
+// 体験談の検索用
 Route::get('/experiences/serch','App\Http\Controllers\ExperienceController@serch');
-// Route::get('/experiences/serch','App\Http\Controllers\ExperienceController');
+// 体験談投稿
+Route::get('experiences/create', [ExperienceController::class, 'create']);
+// 体験談詳細
+Route::get('experiences/{id}', [ExperienceController::class, 'show']);
+// 物件関連
+Route::get('/items', 'App\Http\Controllers\ItemController@index');
+// 物件検索用
+Route::get('/items/serch','App\Http\Controllers\ItemController@serch');
+// 物件詳細
+Route::get('items/{id}', [ItemController::class, 'show']);

@@ -17,14 +17,42 @@ class ExperienceController extends Controller
         return view('experiences.index');
     }
 
+    public function show($id)
+    {
+        $experience = Experience::find($id);
+        return view('experiences.show',[
+            'experience' => $experience
+        ]);
+    }
+
+    public function create()
+    {
+        $user = auth()->user();
+
+        return view('experiences.create', [
+            'user' => $user
+        ]);
+    }
+
+     public function store(Request $request, Experience $experience)
+    {
+        
+        $user = auth()->user();
+        $data = $request->all();
+
+        // $validator->validate();
+        return redirect('experiences');
+        $path = $request->file('image')->store('public/experience');
+            // public/text_imagesに保存
+            $image= basename($path); 
+            // 画像名のみ保存するようにしています。
+            $tweet->experienceStore($user->id, $data,$image);
+    }
+
+
     //検索機能
-
-
-
-
     public function serch(Request $request) {
         $keyword_name = $request->college_name;
-
         if(!empty($keyword_name)) {
         $query = Experience::query();
         // クエリストリングだけ取得したいならquery()

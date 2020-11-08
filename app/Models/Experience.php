@@ -11,5 +11,26 @@ class Experience extends Model
 
     protected $fillable = ['college_name','undergraduate','remittance','rent'
 ,'where_live','sex','part','troble','frend','from','accident','image'];
+
+public function tweetStore(Int $user_id, Array $data,$image)
+    {
+        // 体験談ように編集する
+        $this->user_id = $user_id;
+        $this->college_name = $data['college_name'];
+        $this->undergraduate = $data['undergraduate'];
+        $this->remittance = $data['remittance'];
+        $this->rent = $data['rent'];
+        $this->where_live = $data['where_live'];
+        $this->sex = $data['sex'];
+        $this->part = $data['part'];
+        $this->troble = $data['troble'];
+        $this->frend = $data['frend'];
+        $this->from = $data['from'];
+        $this->accident = $data['accident'];
+        $this->image = $image;
+        $this->save();
+        // 上記のあたいをsaveで保存
+        return;
+    }
 }
 

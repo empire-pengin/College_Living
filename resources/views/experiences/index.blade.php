@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>検索条件を入力してください</h1>
+<h1>物件の検索条件を入力してください</h1>
 <form action="{{asset('experiences/serch')}}" method="post">
   {{ csrf_field()}}
   {{method_field('get')}}
