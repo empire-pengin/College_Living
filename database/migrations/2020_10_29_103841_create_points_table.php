@@ -17,6 +17,7 @@ class CreatePointsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->comment('ユーザID');
             $table->unsignedInteger('points')->nullable()->comment('ポイント');
+            $table->timestamps();
         
             $table->foreign('user_id')
             ->references('id')

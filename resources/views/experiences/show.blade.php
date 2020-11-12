@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- {{var_dump($experience)}} -->
+{{$experience->image}}
+{{$experience->user_id}}
 show
+<img src="{{asset('img/college/'.$experience->image)}}" alt="">
 
 @endsection

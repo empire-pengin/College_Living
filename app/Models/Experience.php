@@ -12,9 +12,8 @@ class Experience extends Model
     protected $fillable = ['college_name','undergraduate','remittance','rent'
 ,'where_live','sex','part','troble','frend','from','accident','image'];
 
-public function tweetStore(Int $user_id, Array $data,$image)
+public function experienceStore(Int $user_id, Array $data,$image)
     {
-        // 体験談ように編集する
         $this->user_id = $user_id;
         $this->college_name = $data['college_name'];
         $this->undergraduate = $data['undergraduate'];

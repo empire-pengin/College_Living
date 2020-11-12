@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Experience;
+use App\Models\Point;
 
 class ExperienceController extends Controller
 {
@@ -28,25 +29,28 @@ class ExperienceController extends Controller
     public function create()
     {
         $user = auth()->user();
+        $experience = Experience::all();
 
         return view('experiences.create', [
-            'user' => $user
+            'user' => $user,
+            'experience' => $experience
         ]);
     }
 
-     public function store(Request $request, Experience $experience)
+     public function store(Request $request, Experience $experience,Point $point)
     {
-        
+
         $user = auth()->user();
         $data = $request->all();
 
         // $validator->validate();
-        return redirect('experiences');
         $path = $request->file('image')->store('public/experience');
-            // public/text_imagesに保存
-            $image= basename($path); 
-            // 画像名のみ保存するようにしています。
-            $tweet->experienceStore($user->id, $data,$image);
+        // public/text_imagesに保存
+        $image= basename($path); 
+        // 画像名のみ保存するようにしています。
+        $experience->experienceStore($user->id, $data,$image);
+        $point->pointStore($user->id);
+        return redirect('experiences');
     }
 
 

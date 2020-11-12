@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ExperienceController;
+use App\Models\Experience;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,21 +17,28 @@ use App\Http\Controllers\ExperienceController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    //エクスペリエンスを定義します。
+    $experience = Experience::all();
+    // return view('home');
+    return view('home',[
+        'experience' => $experience
+        ]);
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // 体験談一覧表
-Route::get('/experiences', 'App\Http\Controllers\ExperienceController@index');
+// Route::get('/experiences', 'App\Http\Controllers\ExperienceController@index');
 //コントローラーの指定をしなかったのでエラーが出たのでわけてます
 // 体験談の検索用
 Route::get('/experiences/serch','App\Http\Controllers\ExperienceController@serch');
 // 体験談投稿
-Route::get('experiences/create', [ExperienceController::class, 'create']);
+Route::get('experiences/create', [ExperienceController::class, 'create'])->middleware('auth');
 // 体験談詳細
 Route::get('experiences/{id}', [ExperienceController::class, 'show']);
+// 体験談保存
+Route::post('experiences/store', [ExperienceController::class, 'store']);
 // 物件関連
 Route::get('/items', 'App\Http\Controllers\ItemController@index');
 // 物件検索用

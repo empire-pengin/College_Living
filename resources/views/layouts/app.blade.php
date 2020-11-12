@@ -29,13 +29,13 @@
         <div id="app" class="container-fluid">
             <div class="row" style="">
                 <!-- サイドバー -->
-                <div class=" bg-dark ">
-                    <div class="sticky-top" style="width:220px;">
-                    <img src="{{asset('img/logo.png')}}" alt="" class="w-100 pt-5">
+                <div class=" bg-dark  "style="">
+                    <div class="sticky-top " style="width:220px;height:100vh;">
+                    <img src="{{asset('img/logo.png')}}" alt="" class="w-100 pt-5 mt-3">
                     <ul class="pl-0" style="list-style:none;" >
-                        <li class="pl-3 mt-4 h5"><a href="" class="text-light">Write Experience</a></li>
-                        <li class="pl-3  mt-4 h5 text-ligh"><a href="" style="" class="text-light h5">Experience</a></li>
-                        <li class="pl-3 mt-4 h5"><a href="" class="text-light">Rent</a></li>
+                        <li class="pl-3 mt-4 h5"><a href="{{asset('experiences/create')}}" class="text-light">Write Experience</a></li>
+                        <li class="pl-3  mt-4 h5 text-ligh"><a href="{{asset('experiences')}}" style="" class="text-light h5">Experience</a></li>
+                        <li class="pl-3 mt-4 h5"><a href="{{asset('items')}}" class="text-light">Rent</a></li>
                         <li class="pl-3 mt-4 h5"><a href="" class="text-light">Service</a></li>
                         @guest
                             <li  class="pl-3 mt-4 h5">
@@ -47,10 +47,10 @@
                                 </li>
                         @endif
                         @else
-                            <li  class="pl-3 mt-4 h5">
+                            <li  class="pl-3 mt-4 h5 text-light">
                                 {{ Auth::user()->name }}
-                                <div class="" >
-                                    <a class="" href="{{ route('logout') }}"
+                                <div class="mt-4" >
+                                    <a class="text-light" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); 
                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -76,7 +76,7 @@
                         <button  class="btn btn-outline-light  " style="width:100px;">Line</button>
                         <button  class="btn btn-outline-light  " style="width:100px;">メルマガ</button>
                     </div>
-                    <div class="text-center px-2 pt-4">
+                    <div class="text-center px-2 pt-4 mb-5">
                         <div class="dropdown">
                             <button  class="btn btn-outline-light dropdown-toggle  btn-block 
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"">Contact Us</button>
@@ -92,27 +92,8 @@
                 <!-- サイドバーここまで -->
                 
                 <!-- main -->
-                <div class="" >
+                <div class="col-8" >
                     @yield('content')
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p>
-                    <p>dddd</p><p>dddd</p><p>dddd</p><p>dddd</p><p>dddd</p><p>dddd</p><p>dddd</p>
                 </div>
             </div>
         </div>
