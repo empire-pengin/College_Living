@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ExperienceController;
 use App\Models\Experience;
+use App\Models\Item;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,12 @@ use App\Models\Experience;
 Route::get('/', function () {
     //エクスペリエンスを定義します。
     $experience = Experience::all();
+    //アイテムを定義します。
+    $item = Item::all();
     // return view('home');
     return view('home',[
-        'experience' => $experience
+        'experience' => $experience,
+        'item' => $item
         ]);
 });
 
