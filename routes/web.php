@@ -33,7 +33,7 @@ Auth::routes();
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // 体験談一覧表
-// Route::get('/experiences', 'App\Http\Controllers\ExperienceController@index');
+Route::get('/experiences', 'App\Http\Controllers\ExperienceController@index');
 //コントローラーの指定をしなかったのでエラーが出たのでわけてます
 // 体験談の検索用
 Route::get('/experiences/serch','App\Http\Controllers\ExperienceController@serch');
