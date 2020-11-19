@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Item;
 
@@ -14,7 +15,10 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('items.index');
+        $item = Item::simplePaginate(30);
+        return view('items.index',[
+            'item' => $item
+        ]);
     }
 
     /**
@@ -99,12 +103,12 @@ class ItemController extends Controller
         $query = Item::query();
         // クエリストリングだけ取得したいならquery()
         //WebブラウザなどがWebサーバに送信するデータをURLの末尾に特定の形式で表記したもの
-        $items = $query->where('station','like', '%' .$keyword_station. '%')->get();
+        $item = $query->where('station','like', '%' .$keyword_station. '%')->simplePaginate(30);
         // LaravelのEloquentでSQL文のLIKE演算子を使いたい場合は、whereの第2引数をLIKEにすればよい。
         //like演算子は一部があっているものを検索する。
         $message = "「". $keyword_station."」を含む物件の検索が完了しました。";
         return view('items.serch')->with([
-        'items' => $items,
+        'item' => $item,
         'message' => $message,
         ]);
     }
