@@ -180,7 +180,7 @@
         <!-- google map api -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADy2Z_VYXNySO-uJSwOWRvs19LrJ3se9U"
         ></script>
-        <script src="https://maps.googleapis.com/maps/api/geocode/json?address=AIzaSyADy2Z_VYXNySO-uJSwOWRvs19LrJ3se9U"
+        <script src="https://maps.googleapis.com/maps/api/geocode/json?address="
         ></script>
         <script type="text/javascript">
         const adress = $('#js-getVariable').data();
