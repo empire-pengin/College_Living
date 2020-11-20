@@ -1,14 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-home
 
-@foreach($experience as $experiences)
-
-<div class=col-5>
-<img src="{{asset('img/college/'.$experiences->image)}}" alt="">
-
+<div class="container-fluid">
+    <div class="row">
+        @component('components.sidebar')
+        @endcomponent
+        <div class="col-2">
+        @foreach($experience as $experiences)
+        <p>s</p>
+        @endforeach
+        </div>
+    </div>
 </div>
-@endforeach
 @endsection
-
