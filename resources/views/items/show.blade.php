@@ -31,13 +31,13 @@
                     <div class="carousel-inner">img
                         <!-- first-slide -->
                         <div class="carousel-item active">
-                        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" 
-                        width="600" height="400" src="{{asset('img/item/naisou/'.$item->item_image1)}}" 
+                        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+                        width="600" height="400" src="{{asset('img/item/naisou/'.$item->item_image1)}}"
                         preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: First slide">
                         </div>
                         <!-- second-slide -->
                         <div class="carousel-item">
-                        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" 
+                        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
                         width="800" height="400" src="{{asset('img/item/gaikan/'.$item->item_image3)}}"
                         preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Second slide">
                         </div>
@@ -89,17 +89,17 @@
                     <!-- 概要 -->
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                       <table class="table table-bordered">
-                        
+
                         <tbody>
                           <tr>
                             <th scope="row">家賃</th>
                             <td>{{$item->rent}}</td>
-                            
+
                           </tr>
                           <tr>
                             <th scope="row">物件名</th>
                             <td>{{$item->name}}</td>
-                            
+
                           </tr>
                           <tr>
                             <th scope="row">最寄り駅</th>
@@ -132,12 +132,12 @@
                           <tr>
                             <th scope="row">初期費用</th>
                             <td>{{$item->first_cost}}</td>
-                            
+
                           </tr>
                           <tr>
                             <th scope="row">損保</th>
                             <td>{{$item->insurance}}</td>
-                            
+
                           </tr>
                           <tr>
                             <th scope="row">取引形態</th>
@@ -167,7 +167,7 @@
             <!-- googlemap -->
             <div class="col-6 flex-fill bd-highlight">
             <div id="map" style="width: 600px; height: 500px;"></div>
-            
+
             </div>
         </div>
         <span></span>
@@ -179,10 +179,10 @@
       <!-- <span id="js-getVariable" data-name="{{ $item->station }}"></span> -->
       <span id="js-getVariable" data-name="{{ $item->station }}"></span>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
-        
+
+
         <script type="text/javascript">
-        
+
         // console.log();
         const name = '{{ $item->station }}';
         var address = name;
