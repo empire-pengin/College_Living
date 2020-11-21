@@ -31,13 +31,13 @@
                     <div class="carousel-inner">img
                         <!-- first-slide -->
                         <div class="carousel-item active">
-                        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" 
-                        width="600" height="400" src="{{asset('img/item/naisou/'.$item->item_image1)}}" 
+                        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+                        width="600" height="400" src="{{asset('img/item/naisou/'.$item->item_image1)}}"
                         preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: First slide">
                         </div>
                         <!-- second-slide -->
                         <div class="carousel-item">
-                        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" 
+                        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
                         width="800" height="400" src="{{asset('img/item/gaikan/'.$item->item_image3)}}"
                         preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Second slide">
                         </div>
@@ -89,17 +89,17 @@
                     <!-- 概要 -->
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                       <table class="table table-bordered">
-                        
+
                         <tbody>
                           <tr>
                             <th scope="row">家賃</th>
                             <td>{{$item->rent}}</td>
-                            
+
                           </tr>
                           <tr>
                             <th scope="row">物件名</th>
                             <td>{{$item->name}}</td>
-                            
+
                           </tr>
                           <tr>
                             <th scope="row">最寄り駅</th>
@@ -132,12 +132,12 @@
                           <tr>
                             <th scope="row">初期費用</th>
                             <td>{{$item->first_cost}}</td>
-                            
+
                           </tr>
                           <tr>
                             <th scope="row">損保</th>
                             <td>{{$item->insurance}}</td>
-                            
+
                           </tr>
                           <tr>
                             <th scope="row">取引形態</th>
@@ -166,34 +166,56 @@
             </div>
             <!-- googlemap -->
             <div class="col-6 flex-fill bd-highlight">
-            <div id="map" style="height: 100%; width: 100%;"></div>
+            <div id="map" style="width: 600px; height: 500px;"></div>
+
             </div>
         </div>
+        <span></span>
         <!-- メインコンテンツ終わり -->
         </div>
       </div>
       @component('components.footer')
       @endcomponent
+      <!-- <span id="js-getVariable" data-name="{{ $item->station }}"></span> -->
       <span id="js-getVariable" data-name="{{ $item->station }}"></span>
-      <!-- jqueryの読み込む -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- google map api -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADy2Z_VYXNySO-uJSwOWRvs19LrJ3se9U"
-        ></script>
-        <script src="https://maps.googleapis.com/maps/api/geocode/json?address="
-        ></script>
+
+
         <script type="text/javascript">
-        const adress = $('#js-getVariable').data();
-        //地名から座標を取得する
 
-        //指定の場所にピンを指す
-      var map = new google.maps.Map(document.getElementById('map'), {
+        // console.log();
+        const name = '{{ $item->station }}';
+        var address = name;
+      function initMap() {
+  var target = document.getElementById('map'); //マップを表示する要素を指定
+  // var address = '東京都新宿区新宿３丁目３８−１'; //住所を指定
+  var geocoder = new google.maps.Geocoder();
 
-        center: {
-          lat: -34.397, //緯度を設定
-          lng: 150.644 //経度を設定
-        },
-        zoom: 8 //地図のズームを設定
-      });
+  geocoder.geocode({ address: address }, function(results, status){
+    if (status === 'OK' && results[0]){
+
+      console.log(results[0].geometry.location);
+
+       var map = new google.maps.Map(target, {
+         center: results[0].geometry.location,
+         zoom: 18
+       });
+
+       var marker = new google.maps.Marker({
+         position: results[0].geometry.location,
+         map: map,
+         animation: google.maps.Animation.DROP
+       });
+
+    }else{
+      //住所が存在しない場合の処理
+      alert('住所が正しくないか存在しません。');
+      target.style.display='none';
+    }
+  });
+}
+
     </script>
+    <!-- google map api -->
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAtJ17qJ1koXoUkMddqDSRudM_ogj7yrg4&callback=initMap"></script>
 @endsection
