@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="d-flex bd-highlight pr-0  " >
+<div class="d-flex bd-highlight pr-0 " style="overflow: visible">
 <!-- サイドバー -->
-  <div class="  bd-highlight  sticky-top">
+  <div class="  bd-highlight position-fixed ">
   @component('components.sidebar')
   @endcomponent
   </div>
@@ -14,10 +14,6 @@
   </div>
   <!-- 体験談表示 -->
   <div class="row  bg-primary d-flex justify-content-center">
-  <div class="col-12">
-    <p style="">最新体験談</p>
-    <p style=" ">hogehoge</p>
-  </div>
   @for($i=0;$i<=2;$i++)
   <div class="col-4 shadow border-right">
     <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
@@ -39,13 +35,9 @@
   </a>
   </div>
   <!-- 物件表示 -->
-    <div class="row  d-flex justify-content-center">
-    <div class="col-12">
-    <p style="">最新体験談</p>
-    <p style=" ">hogehoge</p>
-  </div>
+  <div class="row  d-flex justify-content-center">
   @for($i=0;$i<=3;$i++)
-  <div class="col-5 my-4 mx-5 p-0 shadow">
+  <div class="col-5 m-1 p-0 shadow">
     <img src="{{asset('img/item/naisou/'.$item[$i]->item_image1)}}"
       class="img-fluid"  alt="">
     <div class="bg-white" style="">
@@ -61,12 +53,6 @@
     </div>
   </div>
   @endfor
-  <div class="">
-    <a href="#" class="btn btn-dark btn-lg my-4" tabindex="-1" role="button" aria-disabled="true">
-      More
-    </a>
-  </div>
-  
   </div>
   <!-- フッター -->
   <div class="row">
