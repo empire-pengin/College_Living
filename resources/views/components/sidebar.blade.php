@@ -1,5 +1,5 @@
 <!-- サイドバー -->
-                <div class="col-2 px-0 "style="">
+                <div class=" px-0"style="">
                     <div class="sticky-top bg-dark " style="width:220px;height:100vh;">
                     <img src="{{asset('img/logo.png')}}" alt="" class="w-100 pt-5 mt-3">
                     <ul class="pl-0" style="list-style:none;" >
