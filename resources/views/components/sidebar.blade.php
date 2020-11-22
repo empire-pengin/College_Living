@@ -9,7 +9,7 @@
                         <li class="pl-3 mt-4 h5"><a href="" class="text-light">Service</a></li>
                         @guest
                             <li  class="pl-3 mt-4 h5">
-                                <a  href="{{ route('login') }}"  class="text-light">{{ __('Login') }}</a>
+                                <a  href="{{ route('login') }}"  class="text-light">{{ __('Logkin') }}</a>
                             </li>
                         @if (Route::has('register'))
                                 <li  class="pl-3 mt-4 h5">
