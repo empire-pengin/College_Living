@@ -1,6 +1,18 @@
 @extends('layouts.app')
 @section('title', 'お問い合わせフォーム')
 @section('content')
+ <div id="app" class="container-fluid">
+      <!-- ヘッダー -->
+        <div class="row sticky-top" style="">
+        @component('components.nav')
+        @endcomponent
+        </div>
+        <div class="row " style="">
+        @component('components.footer')
+        @endcomponent
+        </div>
+</div>
+
  
 <form class="form-horizontal" role="form" method="post" action="{{url('mail')}}">
 <input type="hidden" name="_token" value="{{csrf_token()}}">{{-- CSRF対策--}}
