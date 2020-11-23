@@ -1,6 +1,6 @@
 <!-- サイドバー -->
                 <div class="sticky-top px-0"style="">
-                    <div class=" bg-dark sticky-top" style="width:220px;height:100vh;">
+                    <div class=" bg-dark " style="width:220px;height:100vh;">
                     <img src="{{asset('img/logo.png')}}" alt="" class="w-100 pt-5 mt-3">
                     <ul class="pl-0" style="list-style:none;" >
                         <li class="pl-3 mt-4 h5"><a href="{{asset('experiences/create')}}" class="text-light">Write Experience</a></li>

@@ -3,18 +3,45 @@
 @section('content')
 <div class="d-flex bd-highlight pr-0  " >
 <!-- サイドバー -->
-  <div class="  bd-highlight  sticky-top">
+  <div class="  bd-highlight ">
   @component('components.sidebar')
   @endcomponent
   </div>
   <div class="container-fluid  flex-grow-1 bd-highlight" >
   <!-- ヘッダー -->
-  <div class="row" >
-  ss
+  <div class="row  " 
+  style="background-image: url('{{ asset('img/header.jpg')}}'); background-size: cover; " >
+    <!-- 検索バー -->
+    <div class="">
+    </div>
+    <!-- <div class="col-12 h-25">x</div> -->
+    <!-- ヘッダー文章 -->
+    <div class="col-4 offset-8">
+      <div class="mt-5">
+      <h1>College</h1>
+      <h1>　Living</h1>
+      <p>先輩の一人暮らしの体験談を見て、よりよい大学生活を送るためのお部屋探しサイト</p>
+      </div>
+    </div>
+    <!-- ヘッダー検索バー -->
+    <div class="col-12  py-5  d-flex align-items-end justify-content-center">
+      <div class="p-4 bg-secondary" style="opacity: 0.9;">
+      <form action="{{asset('experiences/serch')}}"
+      class="form-inline " method="post">
+  {{ csrf_field()}}
+  {{method_field('get')}}
+  <div class="form-group">
+    <label>大学名</label>
+    <input type="text" class="form-control " placeholder="検索したい大学名を入力してください" name="college_name">
+  </div>
+  <button type="submit" class="btn btn-primary ">体験談を検索</button>
+</form>
+      </div>
+    </div>
   </div>
   <!-- 体験談表示 -->
   <div class="row  bg-primary d-flex justify-content-center">
-  <div class="col-12">
+  <div class="col-12 mt-5">
     <p style="">最新体験談</p>
     <p style=" ">hogehoge</p>
   </div>
@@ -40,7 +67,7 @@
   </div>
   <!-- 物件表示 -->
     <div class="row  d-flex justify-content-center">
-    <div class="col-12">
+    <div class="col-12 mt-5">
     <p style="">最新体験談</p>
     <p style=" ">hogehoge</p>
   </div>
@@ -61,7 +88,7 @@
     </div>
   </div>
   @endfor
-  <div class="">
+  <div class="col-12">
     <a href="#" class="btn btn-dark btn-lg my-4" tabindex="-1" role="button" aria-disabled="true">
       More
     </a>
@@ -71,8 +98,9 @@
   <!-- フッター -->
   <div class="row">
   @component('components.footer')
-  @endcomponent
+    @endcomponent
   </div>
   </div>
 </div>
+
 @endsection
