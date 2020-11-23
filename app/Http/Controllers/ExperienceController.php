@@ -66,12 +66,12 @@ class ExperienceController extends Controller
         $query = Experience::query();
         // クエリストリングだけ取得したいならquery()
         //WebブラウザなどがWebサーバに送信するデータをURLの末尾に特定の形式で表記したもの
-        $experiences = $query->where('college_name','like', '%' .$keyword_name. '%')->get();
+        $experience = $query->where('college_name','like', '%' .$keyword_name. '%')->get();
         // LaravelのEloquentでSQL文のLIKE演算子を使いたい場合は、whereの第2引数をLIKEにすればよい。
         //like演算子は一部があっているものを検索する。
         $message = "「". $keyword_name."」を含む大学の検索が完了しました。";
         return view('experiences.serch')->with([
-        'experiences' => $experiences,
+        'experience' => $experience,
         'message' => $message,
         ]);
     }

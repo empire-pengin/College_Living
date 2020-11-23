@@ -64,7 +64,7 @@
         <textarea class="form-control" name="body" id="body" rows="3" placeholder="お問い合わせ内容を入力してください" autofocus></textarea>
       </div>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">送信</button>
+    <button class="btn btn-lg btn-primary center-block text-center" type="submit">送信</button>
 </form>
   </div>
   <!-- この間にコードを書く -->
