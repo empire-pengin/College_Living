@@ -8,7 +8,8 @@
     @endcomponent
   </div>
 <!-- 検索 -->
-<div class="col-12 p-0 ">
+<div class="row" style="">
+      <div class="col-12 p-0 ">
         <!-- 検索ボタン -->
         <div class="d-flex justify-content-center my-3">
           <form class="form-inline"
@@ -23,13 +24,16 @@
 </form>
         </div>
       </div>
+    </div>
 <!-- 画像 -->
-<div class="col-8 offset-2 d-flex justify-content-center">
+<div class="row bg-light p-0" >
+  <div class="col-8 offset-2 d-flex justify-content-center">
   <img class="img-fluid" 
   src="{{asset('img/experience.jpg')}}" alt="">
+  </div>
 </div>
 <!-- メインの体験談一覧 -->
-<div class="">
+<div class="row p-0">
 @foreach($experience as $experiences)
 <div class="col-8 offset-2 border-top d-flex align-items-start">
 <img style="height:120px;width:120px;"
@@ -46,10 +50,11 @@ src="{{asset('img/college/'.$experiences->image)}}" alt="">
       </div>
 </div>
 <!-- フッター -->
+  <div class="row p-0">
     @component('components.footer')
     @endcomponent
+  </div>
 </div>
-
 
 
 @endsection

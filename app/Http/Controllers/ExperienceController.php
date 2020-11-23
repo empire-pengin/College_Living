@@ -14,9 +14,13 @@ class ExperienceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Experience $experience)
+    public function index()
     {
-        return view('experiences.index');
+        $experience = Experience::simplePaginate(30);
+        return view('experiences.index',[
+            'experience' => $experience
+        ]);
+        
     }
 
     public function show($id)

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div style="margin-top:50px;">
+
 <h1>検索結果</h1>
 <!-- @if(isset($experiences)) -->
 <table class="table">
