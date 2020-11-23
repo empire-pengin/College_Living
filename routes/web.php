@@ -49,3 +49,5 @@ Route::get('/items', 'App\Http\Controllers\ItemController@index');
 Route::get('/items/serch','App\Http\Controllers\ItemController@serch');
 // 物件詳細
 Route::get('items/{id}', [ItemController::class, 'show']);
+//問い合わせフォーム
+Route::get('mail','App\Http\Controllers\MailController@sendMail');
