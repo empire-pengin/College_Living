@@ -32,10 +32,11 @@
       <p>内容を確認次第、担当者よりご連絡をさせていただきます。</p>
     </div>
   </div>
+
+  <!--↓↓名前↓↓-->
   <div class="col-4 offset-4">
   <form class="form-horizontal" role="form" method="post" action="{{url('mail')}}">
-  <input type="hidden" name="_token" value="{{csrf_token()}}">{{-- CSRF対策--}}
-  <!--↓↓名前↓↓-->
+    <input type="hidden" name="_token" value="{{csrf_token()}}">{{-- CSRF対策--}}
   <!-- <div class="form-group border-top">
       <label for="name" class="control-label col-sm-2">名前:</label>
       <div class="col-sm-10">
@@ -58,7 +59,7 @@
     </div>
     </div>
     <!--↓↓本文↓↓-->
-    <div class="form-group border-top border-bottom">
+    <div class="form-group pb-2 border-top border-bottom">
       <label for="tel" class="control-label col-sm-2">本文:</label>
       <div class="col-sm-10">
         <textarea class="form-control" name="body" id="body" rows="3" placeholder="お問い合わせ内容を入力してください" autofocus></textarea>
@@ -76,4 +77,6 @@
     @endcomponent
   </div>
 </div>
+
 @endsection
+
