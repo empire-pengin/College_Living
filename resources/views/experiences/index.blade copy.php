@@ -18,7 +18,7 @@
   {{method_field('get')}}
   <div class="form-group">
     <label>名前</label>
-    <input type="text" class="form-control c" placeholder="検索したい名前を入力してください" name="college_name">
+    <input type="text" class="form-control " placeholder="検索したい名前を入力してください" name="college_name">
   </div>
   <button type="submit" class="btn btn-primary ">検索</button>
 </form>
