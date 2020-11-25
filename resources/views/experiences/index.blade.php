@@ -17,29 +17,31 @@
   {{method_field('get')}}
   <div class="form-group">
     <label>名前</label>
-    <input type="text" class="form-control c" placeholder="検索したい名前を入力してください" name="college_name">
+    <input type="text" class="form-control " placeholder="検索したい名前を入力してください" name="college_name">
   </div>
   <button type="submit" class="btn btn-primary ">検索</button>
 </form>
         </div>
       </div>
 <!-- 画像 -->
-<div class="col-8 offset-2 d-flex justify-content-center">
+<div class="col-10 offset-1 d-flex justify-content-center my-5">
   <img class="img-fluid" 
-  src="{{asset('img/experience.jpg')}}" alt="">
+  src="{{asset('img/experience2.jpg')}}" alt="">
 </div>
 <!-- メインの体験談一覧 -->
 <div class="">
 @foreach($experience as $experiences)
-<div class="col-8 offset-2 border-top d-flex align-items-start">
-<img style="height:120px;width:120px;"
+<a href="{{asset('experiences/'.$experiences->id)}}">
+  <div class="col-10 offset-1 border-top d-flex align-items-start ">
+<img style="height:150px;width:150px;" class="mt-3 mb-3"
 src="{{asset('img/college/'.$experiences->image)}}" alt="">
-<div class="">
-<p>{{$experiences->created_at}}</p>
-<p>{{$experiences->college_name.$experiences->undergraduate}}</p>
-<a href="{{asset('experiences/'.$experiences->id)}}">リンク</a>
+<div class="mt-3 mb-3 pl-2">
+{{$experiences->created_at}}
+<p class="py-0">{{$experiences->college_name.$experiences->undergraduate}}</p>
 </div>
 </div>
+</a>
+
 @endforeach
 <div class="my-5 col-12 d-flex justify-content-center " style="font-size:16px;">
         {{ $experience->links() }}

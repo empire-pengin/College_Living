@@ -32,6 +32,7 @@
       <p>内容を確認次第、担当者よりご連絡をさせていただきます。</p>
     </div>
   </div>
+
   <!--↓↓名前↓↓-->
   <div class="col-4 offset-4">
   <form class="form-horizontal" role="form" method="post" action="{{url('mail')}}">
@@ -76,4 +77,6 @@
     @endcomponent
   </div>
 </div>
+
 @endsection
+
