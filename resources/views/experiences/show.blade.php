@@ -46,7 +46,7 @@
         <div class="mt-4 mb-5">
           <h2>{{'家賃：'.$experience->rent}}</h2>
         </div>
-        <div class="col-3 mt-1 border">
+        <div class="col-3 mt-1">
           <h3>{{'性別　'.$experience->sex}}</h3>
         </div>
       </div>
