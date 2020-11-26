@@ -7,13 +7,16 @@
     @component('components.nav')
     @endcomponent
   </div>
-  <div class="row">
-    <div class="col-5 my-4 mx-5 p-0 shadow border">
-    <table class="table table-bordered mt-5">
-
+  <div class="row justify-content-center">
+    <div class="col-5 my-4 mx-5 p-0 bg-light">
+    <!-- <table class="table table-bordered mt-5">
       <tbody>
         <tr>
-          <th scope="row">{{$experience->college_name}}</th>
+          <th scope="row">大学名</th>
+          <td>{{$experience->college_name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">学部</th>
           <td>{{$experience->undergraduate}}</td>
         </tr>
         <tr>
@@ -29,24 +32,24 @@
           <td>{{$experience->sex}}</td>
         </tr>
       </tbody>
-      </table>
-      <!-- <div class="mt-5">
-        <div class="border-bottom mt-1">
-         <p>{{'大学名：'.$experience->college_name}}</p>
+    </table> -->
+      <div class="mt-5">
+        <div class="mt-1 mb-5">
+         <h1>{{$experience->college_name."　".$experience->undergraduate}}</h1>
         </div>
-        <div class="border-bottom mt-1">
+        <!-- <div class="mt-1">
          <p>{{'学部：'.$experience->undergraduate}}</p>
         </div>
-        <div class="border-bottom mt-1">
+        <div class="mt-1">
           <p>{{'住んでいる場所：'.$experience->where_live}}</p>
+        </div> -->
+        <div class="mt-4 mb-5">
+          <h2>{{'家賃：'.$experience->rent}}</h2>
         </div>
-        <div class="border-bottom mt-1">
-          <p>{{'家賃：'.$experience->rent}}</p>
+        <div class="col-3 mt-1 border">
+          <h3>{{'性別　'.$experience->sex}}</h3>
         </div>
-        <div class="border-bottom mt-1">
-          <p>{{'性別:'.$experience->sex}}</p>
-        </div>
-      </div> -->
+      </div>
     </div>
     <div class="col-5 my-4 mx-5 p-0 shadow">
       <img src="{{asset('img/college/'.$experience->image)}}" alt="">
