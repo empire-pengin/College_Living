@@ -21,7 +21,6 @@
         </div>
       </div>
     </div>
-    <!-- 画像の表示 -->
     <div class="col-5 my-4 mx-5 p-0 shadow">
       <img src="{{asset('img/college/'.$experience->image)}}" alt="">
     </div>
@@ -64,6 +63,34 @@
               <h3>{{'出身地：'.$experience->from}}</h3>
             </div>
           </div>
+          <!-- <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th scope="row">家賃</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">物件名</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">最寄り駅</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">建物種別</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">築年数</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">間取り</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+            </tbody>
+          </table> -->
         </div>
         <!--体験談2 -->
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -75,17 +102,49 @@
               <h3>{{'友人関係：'.$experience->frend}}</h3>
             </div>
             <div class="mb-5">
-              <div class="col-12">
+              <div class="col-6">
                 <h3>一人暮らしで困ったこと：</h3>
                 <h3>{{$experience->accident}}</h3>
+                <!-- <h3>{{'一人暮らしで困ったこと：'.$experience->accident}}</h3> -->
               </div>
             </div>
           </div>
+          <!-- <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th scope="row">初期費用</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">損保</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">取引形態</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">ほか初期費用</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">間取り</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">備考</th>
+                <td>{{$experience->rent}}</td>
+              </tr>
+              <tr>
+                <th scope="row">記載日</th>
+              <td>{{$experience->rent}}</td>
+              </tr>
+            </tbody>
+          </table> -->
         </div>
       </div>
     </div>
   </div>
-  <!-- 物件検索ボタン -->
   <div class="col-12  py-5  d-flex align-items-end justify-content-center mt-3 mb-3">
       <form action="{{asset('items/serch')}}"
       class="form-inline " method="post">

@@ -37,11 +37,7 @@
   <div class="col-4 offset-4">
   <form class="form-horizontal" role="form" method="post" action="{{url('mail')}}">
     <input type="hidden" name="_token" value="{{csrf_token()}}">{{-- CSRF対策--}}
-  <!-- <div class="form-group border-top">
-      <label for="name" class="control-label col-sm-2">名前:</label>
-      <div class="col-sm-10">
-        <input type="text" name="name" id="name" class="form-control" placeholder="名前を入力してください" autofocus>
-      </div>
+
   </div> -->
   <!--↓↓件名↓↓-->
   <div class="form-group border-top">
