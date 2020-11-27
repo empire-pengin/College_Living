@@ -25,7 +25,7 @@
     </div>
     <!-- ヘッダー検索バー -->
     <div class="col-12  py-5  d-flex align-items-end justify-content-center">
-      <div class="p-4 bg-secondary" style="opacity: 0.9;">
+      <div class="p-4 bg-light" style="opacity: 0.9;">
         <form action="{{asset('experiences/serch')}}"
         class="form-inline " method="post">
         {{ csrf_field()}}
@@ -40,13 +40,13 @@
   </div>
 </div>
 <!-- 体験談表示 -->
-<div class="row  bg-primary d-flex justify-content-center">
+<div class="row  bg-light d-flex justify-content-center">
   <div class="col-12 mt-5">
-    <p style="">最新体験談</p>
-    <p style=" ">hogehoge</p>
+    <h1 style="" class="text-center">最新体験談</h1>
+    <p style=" " class="text-center">hogehoge</p>
   </div>
   @for($i=0;$i<=2;$i++)
-  <div class="col-4 shadow border-right">
+  <div class="col-4  shadow  border-right">
     <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
     class="img-fluid" alt="" style="">
     <div class="bg-white" style="">
@@ -62,17 +62,19 @@
   </div>
   @endfor
   <a href="#" class="btn btn-dark btn-lg my-4" tabindex="-1" role="button" aria-disabled="true">
-    More
+    Check More
   </a>
 </div>
 <!-- 物件表示 -->
 <div class="row  d-flex justify-content-center">
-  <div class="col-12 mt-5">
-    <p style="">最新体験談</p>
-    <p style=" ">hogehoge</p>
+  <div class="col-12 mt-5 ">
+  <div class="center-block">
+    <h1 style="" class="text-center">最新物件</h1>
+    <p style=" " class="text-center">hogehoge</p>
+  </div>
   </div>
   @for($i=0;$i<=3;$i++)
-  <div class="col-5 my-4 mx-5 p-0 shadow">
+  <div class="col-4 my-4 mx-5 bg-primary  p-0 shadow">
     <img src="{{asset('img/item/naisou/'.$item[$i]->item_image1)}}"
     class="img-fluid"  alt="">
     <div class="bg-white" style="">
@@ -89,9 +91,11 @@
   </div>
   @endfor
   <div class="col-12">
-    <a href="#" class="btn btn-dark btn-lg my-4" tabindex="-1" role="button" aria-disabled="true">
-      More
-    </a>
+    <div class="center-block d-flex justify-content-center">
+      <a href="#" class="btn btn-dark btn-lg my-4 " tabindex="-1" role="button" aria-disabled="true">
+        Click More
+      </a>
+    </div>
   </div>
 
 </div>

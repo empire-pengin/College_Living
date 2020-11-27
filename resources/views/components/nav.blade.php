@@ -9,7 +9,7 @@
     </div>
     <div class=nav-item nav-link"">
       @guest
-      <a  href="{{ route('login') }}"  class="text-light">{{ __('Login') }}</a>
+      <a  href="{{ route('login') }}"  class="text-light mr-3">{{ __('Login') }}</a>
       @if (Route::has('register'))
       <a  href="{{ route('register') }}"  class="text-light">{{ __('Register') }}</a>
 
