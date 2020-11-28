@@ -10,32 +10,98 @@
 
   <div class="row p-0 m-0">
     <!-- 上部左側文章 -->
-    <div class="col-4 my-4 mx-5 p-0 bg-light">
+    <div class="col-5 my-4 mx-5 p-0 bg-light">
       <div class="mt-5">
       <!-- この辺はUlとli使うのはどうでしょう？ -->
         <div class="mt-1 mb-5">
           <h1>{{$experience->college_name." ".$experience->undergraduate}}</h1>
         </div>
-        <div class="mt-4 mb-5">
+        <div class="mt-5 mb-5">
           <h2>{{'家賃：'.$experience->rent}}</h2>
         </div>
         <div class="mt-1">
-          <h3>{{'性別'.$experience->sex}}</h3>
+          <h3>{{'性別：'.$experience->sex}}</h3>
         </div>
       </div>
     </div>
     <!-- 上部画像 -->
-    <div class="col-5 my-4 mx-5 p-0 shadow">
-      <img src="{{asset('img/college/'.$experience->image)}}" alt=""
-      class="img-fluid">
+    <div class="col-5 my-4 mx-5 p-0">
+      <img src="{{asset('img/college/'.$experience->image)}}" alt="">
     </div>
   </div>
   <!-- 下部左側MAP -->
-
-  <!-- 下部右側文章 -->
-  
+  <div class="row justify-content-center p-0 m-0">
+    <div class="col-5  my-4 mx-5 p-0 flex-fill bd-highlight">
+      <div id="map" style="width: 600px; height: 500px;"></div>
+    </div>
+    <!-- 下部右側文章 -->
+    <div class="col-5 my-4 mx-5 p-0 flex-fill bd-highlight">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <!-- 体験談1 -->
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab"
+          href="#home" role="tab" aria-controls="home" aria-selected="true">
+          体験談1
+          </a>
+        </li>
+        <!-- 体験談2 -->
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+            体験談2
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content " id="myTabContent">
+        <!-- 体験談1 -->
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="mt-5">
+            <div class="mt-1 mb-5">
+              <h3>{{'仕送り額：'.$experience->undergraduate}}</h3>
+            </div>
+            <div class="mt-4 mb-5">
+              <h3>{{'住んでいる場所：'.$experience->where_live}}</h3>
+            </div>
+            <div class="mb-5">
+              <h3>{{'バイトやインターン：'.$experience->part}}</h3>
+            </div>
+            <div class="mb-5">
+              <h3>{{'出身地：'.$experience->from}}</h3>
+            </div>
+          </div>
+        </div>
+        <!--体験談2 -->
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <div class="mt-5">
+            <div class="col-12 mt-1 mb-5">
+              <h3>{{'隣人トラブル：'.$experience->troble}}</h3>
+            </div>
+            <div class="col-12 mt-4 mb-5">
+              <h3>{{'友人関係：'.$experience->frend}}</h3>
+            </div>
+            <div class="mb-5">
+              <div class="col-12">
+                <h3>一人暮らしで困ったこと：</h3>
+                <h3>{{$experience->accident}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- 物件検索ボタン -->
-
+  <div class="col-12  py-5  d-flex align-items-end justify-content-center mt-3 mb-3">
+      <form action="{{asset('items/serch')}}"
+      class="form-inline " method="post">
+      {{ csrf_field()}}
+      {{method_field('get')}}
+      <div class="form-group">
+        <label>駅名：</label>
+        <input type="text" class="form-control " placeholder="検索したい駅名を入力してください" name="college_name">
+      </div>
+      <button type="submit" class="btn btn-primary ">駅名を検索</button>
+    </form>
+  </div>
   <div class=" p-0" style="">
     @component('components.footer')
     @endcomponent
