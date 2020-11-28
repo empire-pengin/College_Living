@@ -32,13 +32,13 @@
             <!-- first-slide -->
             <div class="carousel-item active">
               <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
-              width="600" height="400" src="{{asset('img/item/naisou/'.$item->item_image1)}}"
+              height="400" src="{{asset('img/item/naisou/'.$item->item_image1)}}"
               preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: First slide">
             </div>
             <!-- second-slide -->
             <div class="carousel-item">
               <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
-              width="800" height="400" src="{{asset('img/item/gaikan/'.$item->item_image3)}}"
+               height="400" src="{{asset('img/item/gaikan/'.$item->item_image3)}}"
               preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Second slide">
             </div>
             <!-- <div class="carousel-item">

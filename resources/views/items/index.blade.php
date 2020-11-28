@@ -24,25 +24,30 @@
       </div>
     </div>
     <!--メインコンテンツ  -->
-    <div class="row bg-light d-flex justify-content-center pl-3">
+    <div class="row  d-flex justify-content-center pl-3">
       <!-- 物件表示 -->
       @foreach($item as $items)
-      <div class="col-md-3 m-1 p-0 shadow">
+      <div class="col-3 mx-3 my-1 p-0">
+      <a href="{{ asset('items/'.$items->id)}}" style="text-decoration:none;">
         <div class="">
           <img src="{{asset('img/item/naisou/'.$items->item_image1)}}"
           class="img-fluid" alt="" style="">
-          <div class="bg-white" style=" ">
-            <h5 class="mb-0">{{$items->name}}</h5>
-            <div>
-              <span>{{'家賃'.$items->rent.'円'}}</span>
-              <span>{{'山手線「'.$items->station.'」'}}</span>
-            </div>
-            <div>
-              <span>{{'築'.$items->age.'年'}}</span>
-              <span>{{'間取り'.$items->construction}}</span>
-            </div>
-          </div>
+          <div class="text-dark pt-2  " style="">
+      <h6 class="mb-0 border-bottom pb-2 pl-0">
+        <span class="text-white bg-dark rounded p-1">Rent</span>
+        {{$items->name}}
+      </h6>
+          <div style="font-size:12px;">
+        <ul style="list-style:none; " 
+        class="pl-1 py-2 text-dark">
+          <li>
+            {{'山手線「'.$items->station.'」'}}/{{'家賃'.$items->rent.'円'}}/{{'築'.$items->age.'年'}}
+          </li>
+        </ul>
+      </div>
+      </div>
         </div>
+      </a>
       </div>
       @endforeach
       <div class="my-5 col-5 d-flex justify-content-center " style="font-size:16px;">

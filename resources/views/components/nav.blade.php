@@ -7,17 +7,15 @@
       <a class="text-light mx-3" href="{{asset('')}}">ホーム</a>
       <a class="text-light " href="">賃貸</a>
     </div>
-    <div class=nav-item nav-link"">
+    <div class="nav-item nav-link">
       @guest
       <a  href="{{ route('login') }}"  class="text-light mr-3">{{ __('Login') }}</a>
       @if (Route::has('register'))
       <a  href="{{ route('register') }}"  class="text-light">{{ __('Register') }}</a>
-      
       @endif
       @else
-      {{ Auth::user()->name }}
-      <div class="mt-4" >
-        <a class="text-light" href="{{ route('logout') }}"
+        <a href=" " class="text-light mr-3">{{ Auth::user()->name }}</a>
+        <a class="text-light " href="{{ route('logout') }}"
         onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">
         {{ __('Logout') }}
@@ -25,7 +23,7 @@
       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
         @csrf
       </form>
-    </div>
+
     @endguest
   </div>
 </nav>
