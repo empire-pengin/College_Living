@@ -8,26 +8,26 @@
     @endcomponent
   </div>
 
-  <div class="row p-0 m-0">
-    <!-- 上部左側文章 -->
-    <div class="col-5 my-4 mx-5 p-0 bg-light">
-      <div class="mt-5">
-      <!-- この辺はUlとli使うのはどうでしょう？ -->
-        <div class="mt-1 mb-5">
-          <h1>{{$experience->college_name." ".$experience->undergraduate}}</h1>
-        </div>
-        <div class="mt-5 mb-5">
-          <h2>{{'家賃：'.$experience->rent}}</h2>
-        </div>
-        <div class="mt-1">
-          <h3>{{'性別：'.$experience->sex}}</h3>
+  <div class="row justify-content-center mt-5 m-0 p-0 ">
+      <!-- 上部左側文章 -->
+      <div class="col-4 my-4 ml-5 p-0">
+        <div class="mt-5">
+        <!-- この辺はUlとli使うのはどうでしょう？ -->
+          <div class="mt-1 mb-5">
+            <h1>{{$experience->college_name." ".$experience->undergraduate}}</h1>
+          </div>
+          <div class="mt-5 mb-5">
+            <h2>{{'家賃：'.$experience->rent}}</h2>
+          </div>
+          <div class="mt-1">
+            <h3>{{'性別：'.$experience->sex}}</h3>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- 上部画像 -->
-    <div class="col-5 my-4 mx-5 p-0">
-      <img src="{{asset('img/college/'.$experience->image)}}" alt="">
-    </div>
+      <!-- 上部画像 -->
+      <div class="col-7 ml-5 my-4 p-0">
+        <img class="w-100" src="{{asset('img/college/'.$experience->image)}}"  style="height: 500px" alt="">
+      </div>
   </div>
   <!-- 下部左側MAP -->
   <div class="row justify-content-center p-0 m-0">
@@ -56,16 +56,28 @@
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <div class="mt-5">
             <div class="mt-1 mb-5">
-              <h3>{{'仕送り額：'.$experience->undergraduate}}</h3>
+              <div class="col-12">
+                <h3 class="mb-3">仕送り額</h3>
+                <p>{{$experience->remittance.'円'}}</p>
+              </div>
             </div>
             <div class="mt-4 mb-5">
-              <h3>{{'住んでいる場所：'.$experience->where_live}}</h3>
+              <div class="col-12">
+                <h3 class="mb-3">住んでいる場所</h3>
+                <p>{{$experience->where_live}}</p>
+              </div>
             </div>
             <div class="mb-5">
-              <h3>{{'バイトやインターン：'.$experience->part}}</h3>
+              <div class="col-12">
+                <h3 class="mb-3">バイトやインターン</h3>
+                <p>{{$experience->part}}</p>
+              </div>
             </div>
             <div class="mb-5">
-              <h3>{{'出身地：'.$experience->from}}</h3>
+              <div class="col-12">
+                <h3 class="mb-3">出身地</h3>
+                <p>{{$experience->from}}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -73,15 +85,21 @@
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
           <div class="mt-5">
             <div class="col-12 mt-1 mb-5">
-              <h3>{{'隣人トラブル：'.$experience->troble}}</h3>
+              <div class="col-12">
+                <h3 class="mb-3">隣人トラブル</h3>
+                <p>{{$experience->troble}}</p>
+              </div>
             </div>
             <div class="col-12 mt-4 mb-5">
-              <h3>{{'友人関係：'.$experience->frend}}</h3>
-            </div>
-            <div class="mb-5">
               <div class="col-12">
-                <h3>一人暮らしで困ったこと：</h3>
-                <h3>{{$experience->accident}}</h3>
+                <h3 class="mb-3">友人関係</h3>
+                <p>{{$experience->frend}}</p>
+              </div>
+            </div>
+            <div class="col-12 mt-4 mb-5">
+              <div class="col-12">
+                <h3 class="mb-3">一人暮らしで困ったこと</h3>
+                <p>{{$experience->accident}}</p>
               </div>
             </div>
           </div>
