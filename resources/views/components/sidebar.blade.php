@@ -51,8 +51,12 @@
       <button  class="btn btn-outline-light dropdown-toggle  btn-block
       id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"">Contact Us</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">無料相談する</a>
-        <a class="dropdown-item" href="#">セミナーへ参加する</a>
+        <a class="dropdown-item" href="{{ asset('mail')}}">
+          無料相談する
+          </a>
+        <a class="dropdown-item" href="{{ asset('mail')}}">
+          セミナーへ参加する
+        </a>
       </div>
     </div>
   </div>

@@ -23,8 +23,6 @@
         </div>
       </div>
     </div>
-
-
     <!--メインコンテンツ  -->
     <div class="row bg-light d-flex justify-content-center pl-3">
       <!-- 物件表示 -->
@@ -47,7 +45,7 @@
         </div>
       </div>
       @endforeach
-      <div class="my-5 col-3 d-flex justify-content-center " style="font-size:16px;">
+      <div class="my-5 col-5 d-flex justify-content-center " style="font-size:16px;">
         {{ $item->links() }}
       </div>
     </div>
