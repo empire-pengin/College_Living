@@ -33,10 +33,43 @@
   <!-- 下部左側MAP -->
 
   <!-- 下部右側文章 -->
+  
+  <!-- 物件検索ボタン -->
 
   <div class=" p-0" style="">
     @component('components.footer')
     @endcomponent
   </div>
 </div>
+<span id="js-getVariable" data-name="{{$experience->where_live}}"></span>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+const name = '{{$experience->where_live}}';
+var address = name;
+function initMap() {
+  var target = document.getElementById('map'); //マップを表示する要素を指定
+  // var address = '東京都新宿区新宿３丁目３８−１'; //住所を指定
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: address }, function(results, status){
+    if (status === 'OK' && results[0]){
+      console.log(results[0].geometry.location);
+      var map = new google.maps.Map(target, {
+        center: results[0].geometry.location,
+        zoom: 18
+      });
+      var marker = new google.maps.Marker({
+        position: results[0].geometry.location,
+        map: map,
+        animation: google.maps.Animation.DROP
+      });
+    }else{
+      //住所が存在しない場合の処理
+      alert('住所が正しくないか存在しません。');
+      target.style.display='none';
+    }
+  });
+}
+</script>
+<!-- google map api -->
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyAtJ17qJ1koXoUkMddqDSRudM_ogj7yrg4&callback=initMap"></script>
 @endsection
