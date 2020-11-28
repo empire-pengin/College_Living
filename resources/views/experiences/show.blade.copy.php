@@ -109,7 +109,7 @@
               </div>
             </div>
           </div>
-          <!-- <table class="table table-bordered">
+          <table class="table table-bordered">
             <tbody>
               <tr>
                 <th scope="row">初期費用</th>
@@ -140,7 +140,7 @@
               <td>{{$experience->rent}}</td>
               </tr>
             </tbody>
-          </table> -->
+          </table>
         </div>
       </div>
     </div>
