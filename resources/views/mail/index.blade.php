@@ -37,8 +37,6 @@
   <div class="col-4 offset-4">
   <form class="form-horizontal" role="form" method="post" action="{{url('mail')}}">
     <input type="hidden" name="_token" value="{{csrf_token()}}">{{-- CSRF対策--}}
-
-  </div> -->
   <!--↓↓件名↓↓-->
   <div class="form-group border-top">
     <label for="name" class="control-label col-sm-2">件名:</label>
@@ -66,8 +64,6 @@
     </div>
   </form>
   </div>
-  <!-- この間にコードを書く -->
-  <!-- この間にコードを書く -->
   <div class=" p-0" style="">
     @component('components.footer')
     @endcomponent

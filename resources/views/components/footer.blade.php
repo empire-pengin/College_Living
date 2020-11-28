@@ -29,7 +29,6 @@
       <span><a href=""><i class="fab fa-facebook-f fa-3x"></i></a></span>
       <span><a href=""><i class="fab fa-instagram fa-3x mx-3"></i></a></span>
       <span><a href=""><i class="fab fa-line fa-3x"></i></a></span>
-
     </div>
   </div>
   <!-- コピーライト -->
@@ -41,5 +40,4 @@
     </nav>
   </div>
 </div>
-
 </div>

@@ -6,10 +6,10 @@
       <li class="pl-3 mt-4 h5"><a href="{{asset('experiences/create')}}" class="text-light">Write Experience</a></li>
       <li class="pl-3  mt-4 h5 text-ligh"><a href="{{asset('experiences')}}" style="" class="text-light h5">Experience</a></li>
       <li class="pl-3 mt-4 h5"><a href="{{asset('items')}}" class="text-light">Rent</a></li>
-      <li class="pl-3 mt-4 h5"><a href="" class="text-light">Service</a></li>
+      <!-- <li class="pl-3 mt-4 h5"><a href="" class="text-light">Service</a></li> -->
       @guest
       <li  class="pl-3 mt-4 h5">
-        <a  href="{{ route('login') }}"  class="text-light">{{ __('Logkin') }}</a>
+        <a  href="{{ route('login') }}"  class="text-light">{{ __('Login') }}</a>
       </li>
       @if (Route::has('register'))
       <li  class="pl-3 mt-4 h5">
