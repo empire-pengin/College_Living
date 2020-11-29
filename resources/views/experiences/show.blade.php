@@ -10,7 +10,7 @@
   <!-- 画面上部↓ -->
   <div class="row m-0 p-0">
     <!-- タイトル -->
-    <div class="offset-1 col-10  text-danger">
+    <div class="offset-1 col-10 text-danger my-5">
       <h1>{{$experience->college_name}}</h1>
     </div>
     <!-- 大学の画像表示 -->
@@ -19,20 +19,20 @@
     </div>
     <!-- 大学概要 -->
     <div class="col-3 border-top border-danger">
-      <div class="mt-5 mb-5">
-        <h3>{{'学部：'.$experience->undergraduate}}</h3>
+      <div class="mt-3 mb-3">
+        <h5>{{'学部：'.$experience->undergraduate}}</h5>
       </div>
-      <div class="mt-5 mb-5">
-        <h3>{{'家賃：'.$experience->rent}}</h3>
+      <div class="mt-3 mb-3">
+        <h5>{{'家賃：'.$experience->rent}}</h5>
       </div>
-      <div class="mt-5 mb-5">
-        <h3>{{'性別：'.$experience->sex}}</h3>
+      <div class="mt-3 mb-3">
+        <h5>{{'性別：'.$experience->sex}}</h5>
       </div>
-      <div class="">
-        <h3>{{'住んでいる場所：'.$experience->where_live}}</h3>
+      <div class="border-bottom border-danger p-0">
+        <h5>{{'住んでいる場所：'.$experience->where_live}}</h5>
       </div>
     </div>
-    <div class="offset-1 col-10 ">
+    <div class="offset-1 col-10 my-5">
       <p>{{$experience->college_name.'大学の体験談へようこそ、下に詳細な記事があるから見ていってね！'}}</p>
     </div>
   </div>
@@ -92,21 +92,41 @@
 
   <!--↓画面下部↓ -->
   <div class="row p-0 m-0">
-    <div class="offset-5 col-4  text-danger">
+    <div class="offset-5 col-4  text-danger my-5">
       <h1>おススメ体験談</h1>
+    </div class="">
+      @for($i=0;$i<=3;$i++)
+      <div class="col-md-5 m-1  d-flex">
+        <img style="height:200px; width:150px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">
+        <div class="bg-white" style="">
+          <h5 class="">{{$all[$i]->troble}}</h5>
+          <h5>{{$all[$i]->frend}}</h5>
+          <h5>{{$all[$i]->accident}}</h5>
+          <!-- <div>
+            <span>{{$all[$i]->frend}}</span>
+            <span>{{$all[$i]->accident}}</span>
+          </div> -->
+        </div>
+      </div>
+      @endfor
     </div>
-    @for($i=0;$i<=3;$i++)
-    <div class="col-md-5 m-1  d-flex">
-      <img style="height:200px; width:150px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">
-      <div class="bg-white" style="">
-        <h5 class="">{{$all[$i]->troble}}</h5>
-        <div>
-          <span>{{$all[$i]->frend}}</span>
-          <span>{{$all[$i]->accident}}</span>
+    <!-- 検索バー -->
+    <div class="row my-5 col-6 offset-3" style="">
+      <div class="col-12 p-0 ">
+        <!-- 検索ボタン -->
+        <div class="d-flex justify-content-center my-3">
+          <form class="form-inline justify-content-center" action="{{asset('items/serch')}}" method="post">
+            {{ csrf_field()}}
+            {{method_field('get')}}
+            <div class="form-group">
+              <label>駅名</label>
+              <input type="text" class="form-control " placeholder="駅名入力" name="station">
+            </div>
+            <button type="submit" class="btn btn-primary ">検索</button>
+          </form>
         </div>
       </div>
     </div>
-    @endfor
   </div>
   <!-- ↑画面下部 -->
   <!-- フッター -->
