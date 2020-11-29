@@ -52,17 +52,16 @@
   <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
     class="img-fluid border-bottom" alt="" >
     <div class="bg-white pt-2 px-2 text-dark" >
-      <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">{{$experience[$i]->college_name}}</h6>
+      <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
+        <strong>{{$experience[$i]->college_name}}</strong>
+      </h6>
       <div class="" style="font-size:12px;">
         <ul style="list-style:none; " class="pl-1 py-2">
           <li>
             <strong>{{'学部: '.$experience[$i]->undergraduate}}</strong>
           </li>
           <li>
-            {{'家賃: '.$experience[$i]->rent.'円'}}
-          </li>
-          <li>
-            {{'山手線「'.$experience[$i]->where_live.'」'}}
+            {{'家賃: '.$experience[$i]->rent.'円'}}/{{'山手線「'.$experience[$i]->where_live.'」'}}
           </li>
         </ul>
       </div>
@@ -92,21 +91,13 @@
     class="img-fluid"  alt="">
     <div class="bg-white text-dark pt-2 px-2 " style="">
       <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
-        {{$item[$i]->name}}
+        <strong>{{$item[$i]->name}}</strong>
       </h6>
       <div style="font-size:12px;">
         <ul style="list-style:none; " class="pl-1 py-2">
           <li>
-            {{'家賃'.$item[$i]->rent.'円'}}
-          </li>
-          <li>
-            {{'山手線「'.$item[$i]->station.'」'}}
-          </li>
-          <li>
-            {{'築'.$item[$i]->age.'年'}}
-          </li>
-          <li>
-            {{'間取り'.$item[$i]->construction}}
+            {{'家賃'.$item[$i]->rent.'円'}}/{{'山手線「'.$item[$i]->station.'」'}}/{{'築'.$item[$i]->age.'年'}}
+            /{{'間取り'.$item[$i]->construction}}
           </li>
         </ul>
       </div>
