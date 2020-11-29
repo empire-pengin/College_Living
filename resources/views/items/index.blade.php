@@ -16,7 +16,7 @@
             {{method_field('get')}}
             <div class="form-group">
               <label>駅名</label>
-              <input type="text" class="form-control " placeholder="検索したい駅名を入力してください" name="station">
+              <input type="text" class="form-control " placeholder="駅名入力" name="station">
             </div>
             <button type="submit" class="btn btn-primary ">検索</button>
           </form>

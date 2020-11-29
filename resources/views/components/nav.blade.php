@@ -1,6 +1,6 @@
 <div class="col-12 p-0 ">
   <!-- タイトル -->
-  <nav class="navbar navbar-dark bg-dark d-flex justify-content-between text-light shadow-lg ">
+  <nav class="navbar navbar-dark bg-dark d-flex justify-content-between text-light ">
     <span class="navbar-brand mb-0 h1 ">College Living</span>
     <div class=nav-item nav-link"">
       <a class="text-light" href="{{asset('experiences')}}">体験談</a>

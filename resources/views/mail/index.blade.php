@@ -8,13 +8,13 @@
     @endcomponent
   </div>
   <div class="p-0">
-  <div class="col-12 py-5 bg-secondary">
-  <div class="my-5 text-center text-light">
+  <div class="col-12 py-3 bg-secondary">
+  <div class="my-3 text-center text-light">
         <h1>CONTACT</h1>
         <h4>お問い合わせ</h4>
   </div>
   </div>
-  <div class="col-4 offset-4 mt-3">
+  <div class="col-8 offset-2 mt-3">
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link active" href="#">HOME</a>
@@ -34,12 +34,12 @@
   </div>
 
   <!--↓↓名前↓↓-->
-  <div class="col-4 offset-4">
+  <div class="col-8 offset-2">
   <form class="form-horizontal" role="form" method="post" action="{{url('mail')}}">
     <input type="hidden" name="_token" value="{{csrf_token()}}">{{-- CSRF対策--}}
   <!--↓↓件名↓↓-->
   <div class="form-group border-top">
-    <label for="name" class="control-label col-sm-2">件名:</label>
+    <label for="name" class="control-label col-sm-2 mt-1">件名</label>
     <div class="col-sm-10">
       <input type="text" name="title" id="title" class="form-control" placeholder="件名を入力してください" autofocus>
     </div>
@@ -47,20 +47,20 @@
   <!--↑↑件名↑↑-->
   <!--↓↓メールアドレス↓↓-->
   <div class="form-group border-top">
-    <label for="email" class="control-label col-sm-4">メールアドレス:</label>
+    <label for="email" class="control-label col-sm-8 mt-1">メールアドレス</label>
     <div class="col-sm-10">
       <input type="email" name="email" id="email" class="form-control" placeholder="メールアドレスを入力してください" autofocus>
     </div>
     </div>
     <!--↓↓本文↓↓-->
     <div class="form-group pb-2 border-top border-bottom">
-      <label for="tel" class="control-label col-sm-2">本文:</label>
+      <label for="tel" class="control-label col-sm-2 mt-1">本文</label>
       <div class="col-sm-10">
         <textarea class="form-control" name="body" id="body" rows="3" placeholder="お問い合わせ内容を入力してください" autofocus></textarea>
       </div>
     </div>
     <div class="col-6 offset-2 mb-5 mt-4">
-      <button class="btn btn-primary btn-lg btn-block" type="submit">送信</button>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">送信する</button>
     </div>
   </form>
   </div>

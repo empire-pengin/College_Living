@@ -1,5 +1,5 @@
-<div class="container-fluid text-light">
-  <div class="row d-flex bd-highlight border-bottom bg-secondary text-center">
+<div class="container-fluid border-top" style="background-color:#F8F8FF;">
+  <div class="row d-flex bd-highlight border-bottom  text-center">
     <!-- Twitter -->
     <div class="col-6 flex-fill bd-highlight
     my-2 border-right align-self-center">
@@ -12,16 +12,16 @@
     </a></p>
   </div>
   <!-- 問い合わせ -->
-  <div class="col-6 flex-fill bd-highlight align-self-center my-2">
+  <div class="col-6 flex-fill bd-highlight align-self-center my-2" >
     <h3>コンタクトフォーム</h3>
     <small>物件や一人暮らしの不安などをお気軽に相談して下さい！</small>
     <p><a href="{{ asset('mail')}}" class="btn btn-primary btn-lg mt-3" role="button" aria-pressed="true">
       相談する
-    </a></p>{{ asset('mail')}}
+    </a></p>
   </div>
 </div>
 <!-- SNS -->
-<div class="row bg-secondary">
+<div class="row " >
   <div class="col-12 text-center mt-2">
     <h1>SNS</h1>
     <samll>Twitter意外でも情報を発信しています。</samll>

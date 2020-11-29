@@ -31,8 +31,8 @@
         {{ csrf_field()}}
         {{method_field('get')}}
         <div class="form-group">
-          <label class="mr-2" style="font-weight:bold;">大学名</label>
-          <input type="text" class="form-control " placeholder="大学名を入力してください" name="college_name">
+          <!-- <label class="mr-2" style="font-weight:bold;">大学名</label> -->
+          <input type="text" class="form-control " placeholder="大学名を入力" name="college_name">
         </div>
         <button type="submit" class="btn btn-primary ">体験談を検索</button>
       </form>
@@ -42,7 +42,7 @@
 <!-- 体験談表示 -->
 <div class="row  bg-light d-flex justify-content-center">
   <div class="col-12 mt-5">
-    <h1 style="" class="text-center">最新体験談</h1>
+    <h1  class="text-center" style="color:#FF4500;">最新体験談</h1>
     <p style=" " class="text-center">hogehoge</p>
   </div>
   @for($i=0;$i<=2;$i++)
@@ -50,8 +50,8 @@
   <div class="col-4  shadow  border-right">
   <a href="{{ asset('experiences/'.$i )}}" style="text-decoration:none;">
   <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
-    class="img-fluid border-bottom" alt="" style="">
-    <div class="bg-white pt-2 px-2 text-dark" style="">
+    class="img-fluid border-bottom" alt="" >
+    <div class="bg-white pt-2 px-2 text-dark" >
       <h6 class="mb-0 border-bottom pb-2 pl-1">{{$experience[$i]->college_name}}</h6>
       <div class="" style="font-size:12px;">
         <ul style="list-style:none; " class="pl-1 py-2">
@@ -81,7 +81,7 @@
 <div class="row  d-flex justify-content-center">
   <div class="col-12 mt-5 ">
   <div class="center-block">
-    <h1 style="" class="text-center">最新物件</h1>
+    <h1 style="color:#FF4500;" class="text-center">最新物件</h1>
     <p style=" " class="text-center">hogehoge</p>
   </div>
   </div>
