@@ -35,12 +35,12 @@
       </div>
     </div>
     <div class="offset-1 col-10 ">
-      <p>hogehogehogehogehogehogehogehogehogehoge</p>
+      <p>{{$experience->college_name.'大学の体験談へようこそ、下に詳細な記事があるから見ていってね！'}}</p>
     </div>
   </div>
     <!-- 画面上部↑ -->
     <!-- 画面中部↓ -->
-    <div class=" row ">
+    <div class="row p-0 m-0">
       <!-- 体験談詳細 -->
       <div class="offset-1 col-5 border-right bg-light">
         <!-- 見出し -->
@@ -94,16 +94,25 @@
     </div>
     <!-- ↑画面中部 ↑-->
      <!--↓画面下部↓ -->
-    </div class="row">
+    <div class="row p-0 m-0">
       <div class="offset-5 col-4  text-danger">
         <h1>おススメ体験談</h1>
       </div>
-      <div class="offset-1">
-      @for($i=0;$i<=3;$i++)
-        <div class="col-5"> 
-          <img style="height:200px; width:150px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">
-        </div>
-      @endfor
+      <div class="row pl-2 offset-1">
+        @for($i=0;$i<=3;$i++)
+          <div class="col-md-5 m-1  shadow">
+            <div class="">
+            <img style="height:200px; width:150px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">
+              <div class="bg-white" style="">
+                <h5 class="">{{$all[$i]->troble}}</h5>
+                  <div>
+                    <span>{{$all[$i]->frend}}</span>
+                    <span>{{$all[$i]->accident}}</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+        @endfor
       </div>
     </div>
     <!-- ↑画面下部 -->
