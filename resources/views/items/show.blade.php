@@ -167,7 +167,6 @@
   <!-- googlemap -->
   <div class="col-6 flex-fill bd-highlight">
     <div id="map" style="width: 600px; height: 500px;"></div>
-
   </div>
 </div>
 <span></span>
