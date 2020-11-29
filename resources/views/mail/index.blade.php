@@ -8,7 +8,7 @@
     @endcomponent
   </div>
   <div class="p-0">
-  <div class="col-12 py-3 bg-secondary">
+  <div class="col-12 py-3 bg-danger">
   <div class="my-3 text-center text-light">
         <h1 >CONTACT</h1>
         <h4>お問い合わせ</h4>
