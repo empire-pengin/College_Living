@@ -19,11 +19,11 @@
     </div>
     <!-- 大学概要 -->
     <div class="col-3 border-top border-danger">
-    <ul class="list-group">
-      <li class="list-group-item">Item #1</li>
-      <li class="list-group-item">Item #2</li>
-      <li class="list-group-item">Item #3</li>
-    </ul>
+      <ul class="pl-0" style="list-style:none;">
+        <li class="">Item #1</li>
+        <li class="">Item #2</li>
+        <li class="">Item #3</li>
+      </ul>
       <div class="mt-3 mb-3">
         <h5>{{'学部：'.$experience->undergraduate}}</h5>
       </div>
@@ -96,48 +96,49 @@
   <!-- 画面中部↑ -->
 
   <!--↓画面下部↓ -->
-  <div class="row p-0 m-0">
-    <div class="offset-5 col-4  text-danger my-5">
-      <h1>おススメ体験談</h1>
+  <div class="row p-0 m-0 d-flex justify-content-center">
+    <div class=" col-12  text-danger my-5">
+      <h1 class="text-center ">おススメ体験談</h1>
     </div class="">
-      @for($i=0;$i<=3;$i++)
-      <div class="col-md-5 m-1">
-        <img style="height:200px; width:150px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">
-        <div class="bg-white" style="">
-          <h5 class="">{{$all[$i]->troble}}</h5>
-          <h5>{{$all[$i]->frend}}</h5>
-          <h5>{{$all[$i]->accident}}</h5>
-          <!-- <div>
-            <span>{{$all[$i]->frend}}</span>
-            <span>{{$all[$i]->accident}}</span>
-          </div> -->
-        </div>
+    @for($i=0;$i<=3;$i++)
+    <div class="col-md-5 m-1 d-flex bg-secondary">
+      <img style="height:200px; width:150px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">
+      <div class="" style="">
+        <h5 class="">{{$all[$i]->troble}}</h5>
+        <h5>{{$all[$i]->frend}}</h5>
+        <h5>{{$all[$i]->accident}}</h5>
+        <ul class="pl-0" style="list-style:none;">
+          <li class="">Item #1</li>
+          <li class="">Item #2</li>
+          <li class="">Item #3</li>
+        </ul>
       </div>
-      @endfor
     </div>
-    <!-- 検索バー -->
-    <div class="row my-5 col-6 offset-3" style="">
-      <div class="col-12 p-0 ">
-        <!-- 検索ボタン -->
-        <div class="d-flex justify-content-center my-3">
-          <form class="form-inline justify-content-center" action="{{asset('items/serch')}}" method="post">
-            {{ csrf_field()}}
-            {{method_field('get')}}
-            <div class="form-group">
-              <label>駅名</label>
-              <input type="text" class="form-control " placeholder="駅名入力" name="station">
-            </div>
-            <button type="submit" class="btn btn-primary ">検索</button>
-          </form>
-        </div>
+    @endfor
+  </div>
+  <!-- 検索バー -->
+  <div class="row my-5 col-6 offset-3" style="">
+    <div class="col-12 p-0 ">
+      <!-- 検索ボタン -->
+      <div class="d-flex justify-content-center my-3">
+        <form class="form-inline justify-content-center" action="{{asset('items/serch')}}" method="post">
+          {{ csrf_field()}}
+          {{method_field('get')}}
+          <div class="form-group">
+            <label>駅名</label>
+            <input type="text" class="form-control " placeholder="駅名入力" name="station">
+          </div>
+          <button type="submit" class="btn btn-primary ">検索</button>
+        </form>
       </div>
     </div>
   </div>
-  <!-- ↑画面下部 -->
-  <!-- フッター -->
-  <div class="row p-0 m-0" style="">
-    @component('components.footer')
-    @endcomponent
-  </div>
+</div>
+<!-- ↑画面下部 -->
+<!-- フッター -->
+<div class="row p-0 m-0" style="">
+  @component('components.footer')
+  @endcomponent
+</div>
 </div>
 @endsection
