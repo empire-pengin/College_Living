@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('title', '体験談詳細')
 @section('content')
@@ -8,7 +7,6 @@
     @component('components.nav')
     @endcomponent
   </div>
-
   <div class="row m-0 p-0">
     <!-- 画面上部↓ -->
     <!-- タイトル -->
@@ -99,7 +97,7 @@
         <h1>おススメ体験談</h1>
       </div>
       <div class="row pl-2 offset-1">
-        @for($i=0;$i<=3;$i++)
+      @for($i=0;$i<=3;$i++)
           <div class="col-md-5 m-1  shadow">
             <div class="">
             <img style="height:200px; width:150px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">

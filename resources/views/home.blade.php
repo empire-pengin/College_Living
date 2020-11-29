@@ -34,7 +34,7 @@
           <!-- <label class="mr-2" style="font-weight:bold;">大学名</label> -->
           <input type="text" class="form-control " placeholder="大学名を入力" name="college_name">
         </div>
-        <button type="submit" class="btn btn-primary ">体験談を検索</button>
+        <button type="submit" class="btn btn-danger">体験談を検索</button>
       </form>
     </div>
   </div>
@@ -42,8 +42,8 @@
 <!-- 体験談表示 -->
 <div class="row  bg-light d-flex justify-content-center">
   <div class="col-12 mt-5">
-    <h1  class="text-center" style="color:#FF4500;">最新体験談</h1>
-    <p style=" " class="text-center">hogehoge</p>
+    <h1  class="text-center" style="color:#FF4500;">Experiences</h1>
+    <p style=" " class="text-center">一人暮らしの体験談を確認して、イメージを膨らませよう！</p>
   </div>
   @for($i=0;$i<=2;$i++)
 
@@ -52,7 +52,7 @@
   <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
     class="img-fluid border-bottom" alt="" >
     <div class="bg-white pt-2 px-2 text-dark" >
-      <h6 class="mb-0 border-bottom pb-2 pl-1">{{$experience[$i]->college_name}}</h6>
+      <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">{{$experience[$i]->college_name}}</h6>
       <div class="" style="font-size:12px;">
         <ul style="list-style:none; " class="pl-1 py-2">
           <li>
@@ -73,7 +73,7 @@
     
   </div>
   @endfor
-  <a href="#" class="btn btn-outline-primary btn-lg my-4" tabindex="-1" role="button" aria-disabled="true">
+  <a href="#" class="btn btn-outline-danger btn-lg my-4" tabindex="-1" role="button" aria-disabled="true">
     Check More
   </a>
 </div>
@@ -81,8 +81,8 @@
 <div class="row  d-flex justify-content-center">
   <div class="col-12 mt-5 ">
   <div class="center-block">
-    <h1 style="color:#FF4500;" class="text-center">最新物件</h1>
-    <p style=" " class="text-center">hogehoge</p>
+    <h1 style="color:#FF4500;" class="text-center">Rent</h1>
+    <p style=" " class="text-center">山手線沿線の物件を確認できます！</p>
   </div>
   </div>
   @for($i=0;$i<=3;$i++)
@@ -91,7 +91,7 @@
     <img src="{{asset('img/item/naisou/'.$item[$i]->item_image1)}}"
     class="img-fluid"  alt="">
     <div class="bg-white text-dark pt-2 px-2 " style="">
-      <h6 class="mb-0 border-bottom pb-2 pl-1">
+      <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
         {{$item[$i]->name}}
       </h6>
       <div style="font-size:12px;">
@@ -116,7 +116,8 @@
   @endfor
   <div class="col-12">
     <div class="center-block d-flex justify-content-center">
-      <a href="#" class="btn btn-outline-primary btn-lg my-4 " tabindex="-1" role="button" aria-disabled="true">
+      <a href="{{ asset('items')}}" 
+      class="btn btn-outline-danger btn-lg my-4 " tabindex="-1" role="button" aria-disabled="true">
         Click More
       </a>
     </div>
