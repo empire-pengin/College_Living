@@ -19,6 +19,11 @@
     </div>
     <!-- 大学概要 -->
     <div class="col-3 border-top border-danger">
+    <ul class="list-group">
+      <li class="list-group-item">Item #1</li>
+      <li class="list-group-item">Item #2</li>
+      <li class="list-group-item">Item #3</li>
+    </ul>
       <div class="mt-3 mb-3">
         <h5>{{'学部：'.$experience->undergraduate}}</h5>
       </div>
@@ -96,7 +101,7 @@
       <h1>おススメ体験談</h1>
     </div class="">
       @for($i=0;$i<=3;$i++)
-      <div class="col-md-5 m-1  d-flex">
+      <div class="col-md-5 m-1">
         <img style="height:200px; width:150px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">
         <div class="bg-white" style="">
           <h5 class="">{{$all[$i]->troble}}</h5>
