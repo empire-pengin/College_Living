@@ -5,7 +5,7 @@
     <div class=nav-item nav-link"">
       <a class="text-light" href="{{asset('experiences')}}">体験談</a>
       <a class="text-light mx-3" href="{{asset('')}}">ホーム</a>
-      <a class="text-light " href="">賃貸</a>
+      <a class="text-light " href="{{asset('items')}}">賃貸</a>
     </div>
     <div class="nav-item nav-link">
       @guest

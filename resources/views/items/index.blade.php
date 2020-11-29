@@ -15,7 +15,7 @@
             {{ csrf_field()}}
             {{method_field('get')}}
             <div class="form-group">
-              <label>駅名</label>
+              <!-- <label>駅名</label> -->
               <input type="text" class="form-control " placeholder="駅名入力" name="station">
             </div>
             <button type="submit" class="btn btn-primary ">検索</button>
@@ -33,8 +33,8 @@
           <img src="{{asset('img/item/naisou/'.$items->item_image1)}}"
           class="img-fluid" alt="" style="">
           <div class="text-dark pt-2  " style="">
-      <h6 class="mb-0 border-bottom pb-2 pl-0">
-        <span class="text-white bg-dark rounded p-1">Rent</span>
+      <h6 class="mb-0 border-bottom border-danger pb-2 pl-0">
+        <span class="text-white bg-danger rounded p-1">Rent</span>
         {{$items->name}}
       </h6>
           <div style="font-size:12px;">

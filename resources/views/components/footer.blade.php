@@ -1,12 +1,12 @@
-<div class="container-fluid border-top" style="background-color:#F8F8FF;">
-  <div class="row d-flex bd-highlight border-bottom  text-center">
+<div class="container-fluid border-top border-danger" style="background-color:#F8F8FF;">
+  <div class="row d-flex bd-highlight border-bottom border-danger text-center">
     <!-- Twitter -->
     <div class="col-6 flex-fill bd-highlight
-    my-2 border-right align-self-center">
+    my-2 border-right align-self-center border-danger">
     <p><i class="fab fa-twitter text-primary fa-3x"></i></i></p>
     <h3>最新情報をお届け</h3>
     <small>Twitterで最新情報を投稿してます。</small>
-    <p><a href="#" class="btn btn-primary btn-lg mt-3"
+    <p><a href="#" class="btn btn-outline-danger btn-lg mt-3"
       role="button" aria-pressed="true">
       Twitterを見る
     </a></p>
@@ -15,7 +15,7 @@
   <div class="col-6 flex-fill bd-highlight align-self-center my-2" >
     <h3>コンタクトフォーム</h3>
     <small>物件や一人暮らしの不安などをお気軽に相談して下さい！</small>
-    <p><a href="{{ asset('mail')}}" class="btn btn-primary btn-lg mt-3" role="button" aria-pressed="true">
+    <p><a href="{{ asset('mail')}}" class="btn btn-outline-danger btn-lg mt-3" role="button" aria-pressed="true">
       相談する
     </a></p>
   </div>
