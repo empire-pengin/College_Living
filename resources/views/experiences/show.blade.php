@@ -19,11 +19,11 @@
     </div>
     <!-- 大学概要 -->
     <div class="col-3 border-top border-danger  mb-5">
-      <ul class="pl-0 mb-5 pb-5" style="list-style:none;">
+      <ul class="pl-0 mt-5 mb-5" style="list-style:none;">
         <li class=""><i class="fas fa-graduation-cap">{{'学部 '.$experience->undergraduate}}</i></li>
-        <li class=""><i class="fas fa-yen-sign">{{'家賃 '.$experience->rent}}</i></li>
-        <li class=""><i class="fas fa-user-circle text-danger fa-3x">{{'性別 '.$experience->sex}}</i></li>
-        <li class="border-bottom border-danger"><i class="fas fa-home">{{'住んでいる場所 '.$experience->where_live}}</i></li>
+        <li class=""><span class="text-danger"><i class="fas fa-yen-sign"></i></span>{{'家賃 '.$experience->rent}}</li>
+        <li class=""><i class="fas fa-user-circle text-danger "></i>{{'性別 '.$experience->sex}}</li>
+        <li class="border-bottom border-danger pb-5"><i class="fas fa-home">{{'住んでいる場所 '.$experience->where_live}}</i></li>
       </ul>
     </div>
     <div class="offset-1 col-10 my-5">
