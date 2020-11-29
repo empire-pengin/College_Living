@@ -39,9 +39,9 @@
     </div>
     <!-- 画面上部↑ -->
     <!-- 画面中部↓ -->
-    <div class="offset-1 col-10 bg-light border">
+    <div class="offset-1 row bg-light border">
       <!-- 体験談詳細 -->
-      <div class="col-6 border-right">
+      <div class="col-5 border-right">
         <!-- 見出し -->
         <div class="border-bottom border-danger text-danger">
           <h1>体験談詳細</h1>
@@ -65,6 +65,9 @@
             </tbody>
           </table>
         </div>
+      </div>
+      <div class="col5">
+        <h1>体験談感想</h1>
       </div>
     </div>
   </div>
