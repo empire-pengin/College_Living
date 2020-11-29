@@ -94,7 +94,7 @@
      <!--↓画面下部↓ -->
     <div class="row p-0 m-0">
       <div class="offset-5 col-4  text-danger">
-        <h1>おススメ体験談</h1>
+        <h1>オススメ体験談</h1>
       </div>
       <div class="row pl-2 offset-1">
       @for($i=0;$i<=3;$i++)

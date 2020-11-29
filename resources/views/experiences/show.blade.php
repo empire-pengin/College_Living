@@ -18,24 +18,13 @@
       <img class="w-100" src="{{asset('img/college/'.$experience->image)}}"  style="height: 500px" alt="">
     </div>
     <!-- 大学概要 -->
-    <div class="col-3 border-top border-danger">
-      <ul class="pl-0" style="list-style:none;">
-        <li class="">Item #1</li>
-        <li class="">Item #2</li>
-        <li class="">Item #3</li>
+    <div class="col-3 border-top border-danger  mb-5">
+      <ul class="pl-0 mb-5 pb-5" style="list-style:none;">
+        <li class=""><i class="fas fa-graduation-cap">{{'学部 '.$experience->undergraduate}}</i></li>
+        <li class=""><i class="fas fa-yen-sign">{{'家賃 '.$experience->rent}}</i></li>
+        <li class=""><i class="fas fa-user-circle text-danger fa-3x">{{'性別 '.$experience->sex}}</i></li>
+        <li class="border-bottom border-danger"><i class="fas fa-home">{{'住んでいる場所 '.$experience->where_live}}</i></li>
       </ul>
-      <div class="mt-3 mb-3">
-        <h5>{{'学部：'.$experience->undergraduate}}</h5>
-      </div>
-      <div class="mt-3 mb-3">
-        <h5>{{'家賃：'.$experience->rent}}</h5>
-      </div>
-      <div class="mt-3 mb-3">
-        <h5>{{'性別：'.$experience->sex}}</h5>
-      </div>
-      <div class="border-bottom border-danger p-0">
-        <h5>{{'住んでいる場所：'.$experience->where_live}}</h5>
-      </div>
     </div>
     <div class="offset-1 col-10 my-5">
       <p>{{$experience->college_name.'大学の体験談へようこそ、下に詳細な記事があるから見ていってね！'}}</p>
@@ -67,7 +56,7 @@
         </tbody>
       </table>
     </div>
-    <div class="col-5 bg-light">
+     <div class="col-5 bg-light">
       <!-- 見出し -->
       <div class="border-bottom border-danger text-danger">
         <h1>体験談感想</h1>
@@ -98,39 +87,33 @@
   <!--↓画面下部↓ -->
   <div class="row p-0 m-0 d-flex justify-content-center">
     <div class=" col-12  text-danger my-5">
-      <h1 class="text-center ">おススメ体験談</h1>
+      <h1 class="text-center ">オススメ体験談</h1>
     </div class="">
     @for($i=0;$i<=3;$i++)
     <div class="col-md-5 m-1 d-flex bg-secondary">
-      <img style="height:200px; width:150px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">
-      <div class="" style="">
-        <h5 class="">{{$all[$i]->troble}}</h5>
-        <h5>{{$all[$i]->frend}}</h5>
-        <h5>{{$all[$i]->accident}}</h5>
+      <img style="height:200px; width:250px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">
         <ul class="pl-0" style="list-style:none;">
-          <li class="">Item #1</li>
-          <li class="">Item #2</li>
-          <li class="">Item #3</li>
+          <li class=""><i class="fas fa-university">{{$all[$i]->college_name}}</i>
+</li>
+          <li class=""><i class="fas fa-graduation-cap">{{'学部 '.$all[$i]->undergraduate}}</i></li>
+          <li class=""><i class="fas fa-user-circle">{{'性別 '.$all[$i]->sex}}</i></li>
+          <li class="border-bottom border-dange"><i class="fas fa-yen-sign">{{'家賃 '.$all[$i]->rent}}</i></li>
         </ul>
-      </div>
     </div>
     @endfor
   </div>
   <!-- 検索バー -->
-  <div class="row my-5 col-6 offset-3" style="">
-    <div class="col-12 p-0 ">
+  <div class="col-12  py-5  d-flex align-items-end justify-content-center">
       <!-- 検索ボタン -->
-      <div class="d-flex justify-content-center my-3">
+      <div class="p-4 bg-light border border-danger" style="opacity: 0.9;">
         <form class="form-inline justify-content-center" action="{{asset('items/serch')}}" method="post">
-          {{ csrf_field()}}
-          {{method_field('get')}}
-          <div class="form-group">
-            <label>駅名</label>
-            <input type="text" class="form-control " placeholder="駅名入力" name="station">
-          </div>
-          <button type="submit" class="btn btn-primary ">検索</button>
-        </form>
-      </div>
+        {{ csrf_field()}}
+        {{method_field('get')}}
+        <div class="form-group">
+          <input type="text" class="form-control " placeholder="大学名を入力" name="college_name">
+        </div>
+        <button type="submit" class="btn btn-danger">体験談を検索</button>
+      </form>
     </div>
   </div>
 </div>
