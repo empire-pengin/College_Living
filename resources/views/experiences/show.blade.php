@@ -68,9 +68,45 @@
         </div>
       </div>
       <div class="col-5 bg-light">
-        <h1>体験談感想</h1>
+        <!-- 見出し -->
+        <div class="border-bottom border-danger text-danger">
+          <h1>体験談感想</h1>
+        </div>
+        <!-- 体験談感想中身 -->
+        <div class="">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th scope="row">隣人トラブル</th>
+                <td>{{$experience->troble}}</td>
+              </tr>
+              <tr>
+                <th scope="row">友人関係</th>
+                <td>{{$experience->frend}}</td>
+              </tr>
+              <tr>
+                <th scope="row">一人暮らしで困ったこと</th>
+                <td>{{$experience->accident}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <!-- ↑画面中部 ↑-->
+     <!--↓画面下部↓ -->
+    </div class="row">
+      <div class="offset-5 col-4  text-danger">
+        <h1>おススメ体験談</h1>
+      </div>
+      <div class="offset-1">
+      @for($i=0;$i<=3;$i++)
+        <div class="col-5"> 
+          <img style="height:200px; width:150px;" src="{{asset('img/college/'.$all[$i]->image)}}" alt="">
+        </div>
+      @endfor
       </div>
     </div>
+    <!-- ↑画面下部 -->
     <!-- フッター -->
   <div class=" p-0" style="">
     @component('components.footer')
