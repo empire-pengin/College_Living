@@ -11,7 +11,7 @@
 
   <div class="row m-0 p-0">
     <!-- 画面上部↓ -->
-    <!-- タイトル --> 
+    <!-- タイトル -->
     <div class="offset-1 col-10  text-danger">
       <h1>{{$experience->college_name}}</h1>
     </div>
@@ -37,11 +37,12 @@
     <div class="offset-1 col-10 ">
       <p>hogehogehogehogehogehogehogehogehogehoge</p>
     </div>
+  </div>
     <!-- 画面上部↑ -->
     <!-- 画面中部↓ -->
-    <div class="offset-1 row bg-light border">
+    <div class=" row ">
       <!-- 体験談詳細 -->
-      <div class="col-5 border-right">
+      <div class="offset-1 col-5 border-right bg-light">
         <!-- 見出し -->
         <div class="border-bottom border-danger text-danger">
           <h1>体験談詳細</h1>
@@ -66,14 +67,14 @@
           </table>
         </div>
       </div>
-      <div class="col5">
+      <div class="col-5 bg-light">
         <h1>体験談感想</h1>
       </div>
     </div>
-  </div>
+    <!-- フッター -->
   <div class=" p-0" style="">
-      @component('components.footer')
-      @endcomponent
+    @component('components.footer')
+    @endcomponent
   </div>
 </div>
 @endsection

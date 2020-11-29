@@ -38,7 +38,7 @@
             <!-- second-slide -->
             <div class="carousel-item">
               <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
-               height="400" src="{{asset('img/item/gaikan/'.$item->item_image3)}}"
+              height="400" src="{{asset('img/item/gaikan/'.$item->item_image3)}}"
               preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Second slide">
             </div>
             <!-- <div class="carousel-item">
