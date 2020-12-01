@@ -49,7 +49,7 @@
   <div class="text-center px-2 pt-4 mb-5">
     <div class="dropdown">
       <button  class="btn btn-outline-light dropdown-toggle  btn-block
-      id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"">Contact Us</button>
+      id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"">Consult Us</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="{{ asset('mail')}}">
           無料相談する
