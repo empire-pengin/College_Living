@@ -106,8 +106,8 @@
 </li>
           <li class="border-bottom border-danger"><span class="text-danger">
           <i class="fas fa-graduation-cap"></i>
-          </span>{{'学部 '.$all[$i]->undergraduate}}　<i class="fas fa-user-circle">
-          </i></span>{{'性別 '.$all[$i]->sex}}　<i class="fas fa-yen-sign"></i></span>{{'家賃 '.$all[$i]->rent}}
+          </span>{{$all[$i]->undergraduate}}　<span class="text-danger"><i class="fas fa-user-circle">
+          </i></span >{{$all[$i]->sex}}　<span class="text-danger"><i class="fas fa-yen-sign"></i></span>{{$all[$i]->rent}}
           </li>
         </ul>
     </div>

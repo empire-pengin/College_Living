@@ -24,6 +24,22 @@
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- フォントの設定 -->
+        <style>
+            body{
+               font-family: YuGothic,'Yu Gothic',sans-serif; 
+            }
+            /* タイトルなど */
+            h1{
+                /* font-family: 'Arial Black',sans-serif; */
+                font-family: 'Sitka Display','Bodoni 72',sans-serif;
+            }
+            /* 物件表示のマンション名など */
+            h6{
+                font-family: 'Yu Gothic UI','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+            }
+        </style>
     </head>
     <body>
         @yield('content')
