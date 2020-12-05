@@ -16,7 +16,7 @@ class ExperienceController extends Controller
      */
     public function index()
     {
-        $experience = Experience::simplePaginate(30);
+        $experience = Experience::orderBy('id', 'desc')->simplePaginate(30);
         return view('experiences.index',[
             'experience' => $experience
         ]);
@@ -54,7 +54,6 @@ class ExperienceController extends Controller
         $path = $request->file('image')->store('public/experience');
         // public/text_imagesに保存
         $image= basename($path); 
-        // 画像名のみ保存するようにしています。
         $experience->experienceStore($user->id, $data,$image);
         $point->pointStore($user->id);
         return redirect('experiences');
