@@ -15,7 +15,11 @@
     </div>
     <!-- 大学の画像表示 -->
     <div class="offset-1 col-7 ">
+      @if(file_exists('img/college/'.$experience->image))
       <img class="w-100" src="{{asset('img/college/'.$experience->image)}}"  style="height: 500px" alt="">
+      @else
+      <img class="w-100" src="{{asset('storage/experience/'.$experience->image)}}"  style="height: 500px" alt="">
+      @endif
     </div>
     <!-- 大学概要 -->
     <div class="col-3 border-top border-danger border-danger pb-5" style="font-size: 22px;">
@@ -41,8 +45,8 @@
   </div>
   <!-- 画面上部↑ -->
   <!-- 画面中部↓ -->
-  <div class="row p-0 m-0">
-    <div class="offset-1 col-5 border-right border-danger bg-light">
+  <div class="row px-0 mx-0 my-3 ">
+    <div class="offset-1 col-5 border-right border-danger ">
       <!-- 見出し -->
       <div class="border-bottom border-danger text-danger">
         <h1>詳細情報</h1>
@@ -121,7 +125,7 @@
         {{ csrf_field()}}
         {{method_field('get')}}
         <div class="form-group">
-          <input type="text" class="form-control " placeholder="大学名を入力" name="college_name">
+          <input type="text" class="form-control " placeholder="駅名を入力" name="station">
         </div>
         <button type="submit" class="btn btn-danger">体験談を検索</button>
       </form>

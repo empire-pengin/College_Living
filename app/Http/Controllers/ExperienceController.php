@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Experience;
+use App\Models\User;
 use App\Models\Point;
 
 class ExperienceController extends Controller
@@ -17,8 +18,11 @@ class ExperienceController extends Controller
     public function index()
     {
         $experience = Experience::orderBy('id', 'desc')->simplePaginate(30);
+        $all_user = User::all();
+
         return view('experiences.index',[
-            'experience' => $experience
+            'experience' => $experience,
+            'all_user' => $all_user
         ]);
         
     }

@@ -1,19 +1,19 @@
 <!-- サイドバー -->
 <div class="sticky-top px-0"style="">
-  <div class=" bg-dark" style="width:220px;height:100vh;">
+  <div class=" " style="width:220px;height:100vh;background-color:#CC6633;">
     <img src="{{asset('img/logo.png')}}" alt="" class="w-100 pt-5 mt-3">
     <ul class="pl-0" style="list-style:none;" >
-      <li class="pl-3 mt-4 h5"><a href="{{asset('experiences/create')}}" class="text-light">Write Experience</a></li>
-      <li class="pl-3  mt-4 h5 text-ligh"><a href="{{asset('experiences')}}" style="" class="text-light h5">Experience</a></li>
-      <li class="pl-3 mt-4 h5"><a href="{{asset('items')}}" class="text-light">Rent</a></li>
+      <li class="pl-3 mt-4 h5"><a href="{{asset('items')}}" class="text-light">賃貸</a></li>
+      <li class="pl-3 mt-4 h5"><a href="{{asset('experiences/create')}}" class="text-light">体験談の投稿</a></li>
+      <li class="pl-3  mt-4 h5 text-ligh"><a href="{{asset('experiences')}}" style="" class="text-light h5">体験談一覧</a></li>
       <!-- <li class="pl-3 mt-4 h5"><a href="" class="text-light">Service</a></li> -->
       @guest
       <li  class="pl-3 mt-4 h5">
-        <a  href="{{ route('login') }}"  class="text-light">{{ __('Login') }}</a>
+        <a  href="{{ route('login') }}"  class="text-light">{{ __('ログイン') }}</a>
       </li>
       @if (Route::has('register'))
       <li  class="pl-3 mt-4 h5">
-        <a  href="{{ route('register') }}"  class="text-light">{{ __('Register') }}</a>
+        <a  href="{{ route('register') }}"  class="text-light">{{ __('会員登録') }}</a>
       </li>
       @endif
       @else
@@ -40,7 +40,8 @@
   </div>
   <!-- btn -->
   <div class="text-center px-2 pt-3">
-    <button  class="btn btn-outline-light  btn-block ">Contact Us</button>
+    <a href="{{asset('mail')}}" class="btn btn-outline-light  btn-block " role="button" aria-pressed="true">お問い合わせ</a>
+    <!-- <button  class="btn btn-outline-light  btn-block ">Contact Us</button> -->
   </div>
   <div class="text-center pt-3">
     <button  class="btn btn-outline-light  " style="width:100px;">Line</button>
@@ -49,7 +50,7 @@
   <div class="text-center px-2 pt-4 mb-5">
     <div class="dropdown">
       <button  class="btn btn-outline-light dropdown-toggle  btn-block
-      id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"">Consult Us</button>
+      id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"">相談を選ぶ</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="{{ asset('mail')}}">
           無料相談する
