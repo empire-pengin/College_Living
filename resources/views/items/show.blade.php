@@ -96,7 +96,7 @@
           <tbody>
             <tr>
               <th scope="row" style="color:#FF4500;">家賃</th>
-              <td>{{$item->rent}}</td>
+              <td>{{ number_format($item->rent)}}</td>
             </tr>
             <tr>
               <th scope="row" style="color:#FF4500;">物件名</th>

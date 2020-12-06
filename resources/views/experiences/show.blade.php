@@ -28,7 +28,7 @@
         </li>
         <li class=""><span class="text-danger">
         <i class="fas fa-yen-sign">
-        </i></span>{{'家賃 '.$experience->rent}}</li>
+        </i></span>{{'家賃 '. number_format($experience->rent)}}</li>
         <li class=""><i><span class="text-danger">
         <span class="fas fa-user-circle text-danger ">
         </i>{{'性別 '.$experience->sex}}
@@ -56,7 +56,7 @@
         <tbody>
           <tr>
             <th scope="row">仕送り額</th>
-            <td>{{$experience->remittance}}</td>
+            <td>{{ number_format($experience->remittance)}}</td>
           </tr>
           <tr>
             <th scope="row">バイトやインターン</th>
@@ -111,7 +111,7 @@
           <li class="border-bottom border-danger"><span class="text-danger">
           <i class="fas fa-graduation-cap"></i>
           </span>{{$all[$i]->undergraduate}}　<span class="text-danger"><i class="fas fa-user-circle">
-          </i></span >{{$all[$i]->sex}}　<span class="text-danger"><i class="fas fa-yen-sign"></i></span>{{$all[$i]->rent}}
+          </i></span >{{$all[$i]->sex}}　<span class="text-danger"><i class="fas fa-yen-sign"></i></span>{{ number_format($all[$i]->rent)}}
           </li>
         </ul>
     </div>

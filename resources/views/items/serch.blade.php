@@ -41,7 +41,7 @@
         <ul style="list-style:none; " 
         class="pl-1 py-2 text-dark">
           <li>
-            {{'山手線「'.$items->station.'」'}}/{{'家賃'.$items->rent.'円'}}/{{'築'.$items->age.'年'}}
+            {{'山手線「'.$items->station.'」'}}/{{'家賃'. number_format($items->rent).'円'}}/{{'築'.$items->age.'年'}}
           </li>
         </ul>
       </div>

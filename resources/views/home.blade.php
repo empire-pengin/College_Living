@@ -70,7 +70,7 @@
               <strong>{{'学部: '.$experience[$i]->undergraduate}}</strong>
             </li>
             <li>
-              {{'家賃: '.$experience[$i]->rent.'円'}}/{{'山手線「'.$experience[$i]->where_live.'」'}}
+              {{'家賃: '.number_format($experience[$i]->rent).'円'}}/{{'山手線「'.$experience[$i]->where_live.'」'}}
             </li>
           </ul>
         </div>
@@ -105,7 +105,7 @@
         <div style="font-size:12px;">
           <ul style="list-style:none; " class="pl-1 py-2">
             <li>
-              {{'家賃'.$item[$i]->rent.'円'}}/{{'山手線「'.$item[$i]->station.'」'}}/{{'築'.$item[$i]->age.'年'}}
+              {{'家賃'. number_format($item[$i]->rent).'円'}}/{{'山手線「'.$item[$i]->station.'」'}}/{{'築'.$item[$i]->age.'年'}}
               /{{'間取り'.$item[$i]->construction}}
             </li>
           </ul>
