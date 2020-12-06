@@ -54,13 +54,13 @@
     <h1  class="text-center" style="color:#FF4500;">Experiences</h1>
     <p style=" " class="text-center">一人暮らしの体験談を確認して、イメージを膨らませよう！</p>
   </div>
-  @for($i=1;$i<=3;$i++)
-
-  <div class="col-lg-4 col-6 shadow  border-right">
-    <a href="{{ asset('experiences/'.$i )}}" style="text-decoration:none;">
+  @for($i=0;$i<=2;$i++)
+  <!-- パソコン用 -->
+  <div class="col-lg-4  shadow d-none  d-lg-block border-right">
+    <a href="{{ asset('experiences/'.$experience[$i]->id)}}" style="text-decoration:none;">
       <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
       class="img-fluid border-bottom" alt="" >
-      <div class="bg-white pt-2 px-2 text-dark d-none  d-lg-block" >
+      <div class="bg-white pt-2 px-2 text-dark " >
         <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
           <strong>{{$experience[$i]->college_name}}</strong>
         </h6>
@@ -78,10 +78,14 @@
         </div>
       </div>
     </a>
-
   </div>
-  <div class="col-6 bg-white pt-2 px-2 text-dark d-sm-block d-lg-none" >
-    <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
+  <!-- スマホ用 -->
+  <div class="col-md-10 bg-white pt-2 px-2 text-dark d-sm-block d-lg-none " >
+    <a href="" class="justify-content-start d-flex">
+      <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
+      class=" border-bottom" alt=""style="width:100px;" >
+      <div class="">
+      <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
       <strong>{{$experience[$i]->college_name}}</strong>
     </h6>
     <div class="" style="font-size:12px;">
@@ -94,8 +98,8 @@
         </li>
       </ul>
     </div>
-    <div>
-    </div>
+      </div>
+    </a>
   </div>
   @endfor
   <a href="#" class="btn btn-outline-danger btn-lg my-4" tabindex="-1" role="button" aria-disabled="true">
@@ -111,6 +115,8 @@
     </div>
   </div>
   @for($i=1;$i<=4;$i++)
+  <!-- if奇数だったら画像左 文章は右 -->
+  <!-- それ以外だったら画像右 文章は左 -->
   <div class="col-lg-4 col-5 my-4 mx-5   p-0 shadow">
     <a href="{{ asset('items/'.$i )}}" style="text-decoration:none;">
       <img src="{{asset('img/item/naisou/'.$item[$i]->item_image1)}}"
