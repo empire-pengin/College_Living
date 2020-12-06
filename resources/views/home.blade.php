@@ -3,11 +3,12 @@
 @section('content')
 <div class="d-flex bd-highlight pr-0  " >
   <!-- サイドバー -->
-  <div class="  bd-highlight ">
+  <div class="  bd-highlight d-none d-md-block">
     @component('components.sidebar')
     @endcomponent
   </div>
   <div class="container-fluid  flex-grow-1 bd-highlight" >
+
     <!-- ヘッダー -->
     <div class="row  "
     style="background-image: url('{{ asset('img/header.jpg')}}'); background-size: cover; " >
