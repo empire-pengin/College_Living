@@ -12,7 +12,7 @@
     <!-- ヘッダー -->
     <div class="row  "
     style="background-image: url('{{ asset('img/header.jpg')}}'); background-size: cover; " >
-    <!-- ヘッダー文章 -->>
+    <!-- ヘッダー文章 -->
     <div class="col-lg-4 offset-8 d-none  d-lg-block">
       <div class="mt-5">
         <h1>College</h1>
