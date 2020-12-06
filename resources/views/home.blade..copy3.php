@@ -56,11 +56,11 @@
   </div>
   @for($i=1;$i<=3;$i++)
 
-  <div class="col-lg-4 col-6 shadow  border-right">
+  <div class="col-lg-4 shadow  border-right">
     <a href="{{ asset('experiences/'.$i )}}" style="text-decoration:none;">
       <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
       class="img-fluid border-bottom" alt="" >
-      <div class="bg-white pt-2 px-2 text-dark d-none  d-lg-block" >
+      <div class="bg-white pt-2 px-2 text-dark" >
         <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
           <strong>{{$experience[$i]->college_name}}</strong>
         </h6>
@@ -80,23 +80,6 @@
     </a>
 
   </div>
-  <div class="col-6 bg-white pt-2 px-2 text-dark d-sm-block d-lg-none" >
-    <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
-      <strong>{{$experience[$i]->college_name}}</strong>
-    </h6>
-    <div class="" style="font-size:12px;">
-      <ul style="list-style:none; " class="pl-1 py-2">
-        <li>
-          <strong>{{'学部: '.$experience[$i]->undergraduate}}</strong>
-        </li>
-        <li>
-          {{'家賃: '.number_format($experience[$i]->rent).'円'}}/{{'山手線「'.$experience[$i]->where_live.'」'}}
-        </li>
-      </ul>
-    </div>
-    <div>
-    </div>
-  </div>
   @endfor
   <a href="#" class="btn btn-outline-danger btn-lg my-4" tabindex="-1" role="button" aria-disabled="true">
     Check More
@@ -111,11 +94,11 @@
     </div>
   </div>
   @for($i=1;$i<=4;$i++)
-  <div class="col-lg-4 col-5 my-4 mx-5   p-0 shadow">
+  <div class="col-lg-4 col-8 my-4 mx-5   p-0 shadow ">
     <a href="{{ asset('items/'.$i )}}" style="text-decoration:none;">
       <img src="{{asset('img/item/naisou/'.$item[$i]->item_image1)}}"
       class="img-fluid"  alt="">
-      <div class="bg-white text-dark pt-2 px-2 d-none  d-lg-block" style="">
+      <div class="bg-white text-dark pt-2 px-2 " style="">
         <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
           <strong>{{$item[$i]->name}}</strong>
         </h6>
@@ -129,19 +112,6 @@
         </div>
       </div>
     </a>
-  </div>
-  <div class="col-5 bg-white text-dark pt-2 px-2 d-sm-block d-lg-none" style="">
-    <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
-      <strong>{{$item[$i]->name}}</strong>
-    </h6>
-    <div style="font-size:12px;">
-      <ul style="list-style:none; " class="pl-1 py-2">
-        <li>
-          {{'家賃'. number_format($item[$i]->rent).'円'}}/{{'山手線「'.$item[$i]->station.'」'}}/{{'築'.$item[$i]->age.'年'}}
-          /{{'間取り'.$item[$i]->construction}}
-        </li>
-      </ul>
-    </div>
   </div>
   @endfor
   <div class="col-12">
