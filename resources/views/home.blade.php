@@ -123,7 +123,7 @@
     </div>
   </div>
   @for($i=1;$i<=4;$i++)
-  <!-- if奇数だったら画像左 文章は右 --
+  <!-- if奇数だったら画像左 文章は右 -->
   <!-- それ以外だったら画像右 文章は左 -->
   <div class="col-lg-4 col-5 my-4 mx-5   p-0 shadow">
     <a href="{{ asset('items/'.$i )}}" style="text-decoration:none;">
