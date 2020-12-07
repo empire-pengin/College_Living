@@ -106,15 +106,9 @@
       </div>
     </a>
   </div>
-<<<<<<< HEAD
-  <!-- スマホ用 -->
-  <div class="col-md-10 bg-white pt-2 px-2 text-dark d-sm-block d-lg-none center-block" >
-    <a href="" class="justify-content-start d-flex">
-=======
   <!-- 体験談スマホ用 -->
   <div class="col-sm-10 col-md-10 mt-2 bg-white pt-2 px-2 text-dark d-sm-block d-lg-none " >
     <a href="" class="justify-content-start d-flex text-dark" style="text-decoration:none;">
->>>>>>> 676f63ee88b217b36db113510a3882d266e493b7
       <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
       class=" border-bottom" alt=""style="width:200px;" >
       <div class="">
