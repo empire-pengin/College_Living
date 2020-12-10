@@ -114,10 +114,10 @@
     <!-- レスポンシブ -->
     <div class="container-fluid border-top border-danger  text-center py-0  d-sm-block d-md-none">
       <div class="p-3 ">
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <h6 class="text-danger mb-1 mt-3">Contact</h6>
           <h2 class=" d-inline border-danger border-bottom" style="font-weight:bold;">お問い合わせ</h2>
-        </div>
+        </div> -->
         <div class="row mb-4">
 
           <div class="col-sm-6 mt-3">
