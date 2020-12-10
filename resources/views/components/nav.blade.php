@@ -15,15 +15,15 @@
       <a  href="{{ route('register') }}"  class="text-light">{{ __('Register') }}</a>
       @endif
       @else
-        <a href=" " class="text-light mr-3">{{ Auth::user()->name }}</a>
-        <a class="text-light " href="{{ route('logout') }}"
-        onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();">
-        {{ __('Logout') }}
-      </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-      </form>
+      <a href=" " class="text-light mr-3">{{ Auth::user()->name }}</a>
+      <a class="text-light " href="{{ route('logout') }}"
+      onclick="event.preventDefault();
+      document.getElementById('logout-form').submit();">
+      {{ __('Logout') }}
+    </a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+      @csrf
+    </form>
     @endguest
   </div>
 </nav>
@@ -38,39 +38,42 @@
       <i class="fas fa-bars text-light "></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item border-top">
-        <a class="nav-link text-light" href="{{asset('')}}">ホーム <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item border-top">
-        <a class="nav-link  text-light" href="{{asset('items')}}">賃貸</a>
-      </li>
-      <li class="nav-item border-top">
-        <a class="nav-link  text-light" href="{{asset('experiences')}}">体験談</a>
-      </li>
-      <li class="nav-item border-top dropdown">
-        <div class="nav-item nav-link">
-      @guest
-      <a  href="{{ route('login') }}"  class="text-light mr-3">{{ __('Login') }}</a>
-      @if (Route::has('register'))
-      <a  href="{{ route('register') }}"  class="text-light">{{ __('Register') }}</a>
-      @endif
-      @else
-        <a href=" " class="text-light mr-3">{{ Auth::user()->name }}</a>
-        <a class="text-light " href="{{ route('logout') }}"
-        onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();">
-        {{ __('Logout') }}
-      </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-      </form>
-    @endguest
-  </div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item border-top">
+          <a class="nav-link text-light" href="{{asset('')}}">ホーム <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item border-top">
+          <a class="nav-link  text-light" href="{{asset('items')}}">賃貸</a>
+        </li>
+        <li class="nav-item border-top">
+          <a class="nav-link  text-light" href="{{asset('experiences')}}">体験談</a>
+        </li>
+        <li class="nav-item border-top">
+          <a class="nav-link  text-light" href="{{asset('experiences/create')}}">体験談の投稿</a>
+        </li>
+        <li class="nav-item border-top dropdown">
+          <div class="nav-item nav-link">
+            @guest
+            <a  href="{{ route('login') }}"  class="text-light mr-3">{{ __('Login') }}</a>
+            @if (Route::has('register'))
+            <a  href="{{ route('register') }}"  class="text-light">{{ __('Register') }}</a>
+            @endif
+            @else
+            <a href=" " class="text-light mr-3">{{ Auth::user()->name }}</a>
+            <a class="text-light " href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+          </form>
+          @endguest
+        </div>
       </li>
     </ul>
   </div>
-  </nav>
+</nav>
 
 </div>
 </div>

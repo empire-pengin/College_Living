@@ -9,13 +9,17 @@
   </div>
   <!-- {{var_dump($experience)}} -->
 
+  <!-- タイトル -->
   <div class="col-8 offset-2 mt-3">
     <div class="text-center pb-5 pt-3 ">
       <h1 style="color:#FF4500;">Experiences Form</h1>
       <p>体験談絵を投稿して500ポイントをゲット！</p>
     </div>
   </div>
-  <div class="col-8 offset-2">
+
+  <!-- フォーム中身 -->
+  <div class="row d-flex justify-content-center">
+    <div class="col-lg-8 col-sm-10">
     <!--↑↑件名↑↑-->
     <form method="POST" action="{{asset('experiences/store')}}" enctype="multipart/form-data">
       @csrf
@@ -79,16 +83,17 @@
         <span id="selectednum">画像を選択</span>
       </span>
       <input type="file" style="" class="" id="" aria-describedby="" name="image">
-    <div class="col-12 mb-5 mt-4">
-      <button class="btn  btn-lg  btn-outline-danger btn-block" type="submit">送信する</button>
-    </div>
-  </form>
-</div>
-<!-- フッター -->
-<div class=" p-0" style="">
-  @component('components.footer')
-  @endcomponent
-</div>
+      <div class="col-12 mb-5 mt-4">
+        <button class="btn  btn-lg  btn-outline-danger btn-block" type="submit">送信する</button>
+      </div>
+    </form>
+  </div>
+  </div>
+  <!-- フッター -->
+  <div class=" p-0" style="">
+    @component('components.footer')
+    @endcomponent
+  </div>
 </div>
 
 @endsection

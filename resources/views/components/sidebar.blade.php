@@ -54,7 +54,7 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="{{ asset('mail')}}">
           無料相談する
-          </a>
+        </a>
         <a class="dropdown-item" href="{{ asset('mail')}}">
           セミナーへ参加する
         </a>

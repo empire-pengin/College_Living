@@ -1,100 +1,216 @@
 @extends('layouts.app')
-<!-- ​ style="font-size: 80px; padding-left: 700px; color: white; padding-top: 100px" -->
-<!-- class="display-3 text-white text-right pr-" -->
+
 @section('content')
-<!-- :;dv -->
-  <!-- {{ var_dump($experience )}} -->
-<div class="container">
-  <div class="row">
-    <div style="background-image: url('{{ asset('img/college/college5.jpg')}}'); background-size: cover; height: 500px;">
-      <h1 class="display-1 text-white col-md-4 offset-md-6">College</h1>
-      <h1 style="font-size: 80px; padding-left: 800px; color: white;">Living</h1>
-      <p style="padding-left:700px; opacity: 0.7px;">hogehoge</p>
-      <form class="form-inline justify-content-center" action="{{asset('experiences/serch')}}" method="post">
+<!-- nav -->
+<div class="container-fluid sticky-top">
+<div class="row d-sm-block d-md-none ">
+@component('components.nav')
+    @endcomponent
+</div>
+</div>
+<div class="d-flex bd-highlight pr-0  " >
+  <!-- サイドバー -->
+  <div class="  bd-highlight d-none d-md-block">
+    @component('components.sidebar')
+    @endcomponent
+  </div>
+
+  <div class="container-fluid  flex-grow-1 bd-highlight" >
+    <!-- ヘッダー PC画面-->
+    <div class="row  d-none d-md-block"
+    style="background-image: url('{{ asset('img/header.jpg')}}'); background-size: cover; " >
+    <!-- ヘッダー文章 -->
+    <div class="col-lg-4 offset-8">
+      <div class="mt-5">
+        <h1>College</h1>
+        <h1>　Living</h1>
+        <p>先輩の一人暮らしの体験談を見て、よりよい大学生活を送るためのお部屋探しサイト</p>
+      </div>
+    </div>
+    <div class="col-12  py-5  d-flex align-items-end justify-content-center">
+      <!-- ヘッダー物件検索 -->
+      <div class="p-4 bg-light" style="opacity: 0.9;">
+        <form action="{{asset('items/serch')}}"
+        class="form-inline " method="post">
         {{ csrf_field()}}
         {{method_field('get')}}
         <div class="form-group">
-          <input style="width: 300px; height: 50px; margin-top: 50px;" type="text" class="form-control" placeholder="検索したい大学名" name="college_name">
+          <input type="text" class="form-control " placeholder="駅名" name="station">
         </div>
-        <div class="form-group">
-          <button style="height: 50px; margin-top: 50px"  type="submit" class="btn btn-primary">検索</button>
-        </div>
+        <button type="submit" class="btn btn-danger"><i class="fas fa-search"></i></button>
       </form>
     </div>
+    <!-- ヘッダー体験談検索 -->
+    <div class="p-4 bg-light" style="opacity: 0.9;">
+      <form action="{{asset('experiences/serch')}}"
+      class="form-inline " method="post">
+      {{ csrf_field()}}
+      {{method_field('get')}}
+      <div class="form-group">
+        <!-- <label class="mr-2" style="font-weight:bold;">大学名</label> -->
+        <input type="text" class="form-control " placeholder="大学名を入力" name="college_name">
+      </div>
+      <button type="submit" class="btn btn-danger">体験談を検索</button>
+    </form>
   </div>
 </div>
-​
-<div class="container bg-light justify-content-center">
-  <p style="text-align:left; font-size:50px;">最新体験談</p>
-  <p style="text-align:left; ">hogehoge</p>
-  <!-- <div class="row">
-      @for ($i=0;$i<=2;$i++)
-        <img class="col-sm-3 border-right border-dark" width="300" height="300" src="{{ asset('img/college/'. $experience[$i]->image )}}" >
-      @endfor
-  </div> -->
-  <div class="row pl-1 justify-content-center bg-primary">
-    @for($i=0;$i<=2;$i++)
-      <div class="col-md-3 m-1 p-0 shadow">
-        <div class="">
-          <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
-          class="img-fluid" alt="" style="">
-          <div class="bg-white" style="">
-            <h5 class="mb-0">{{$experience[$i]->college_name}}</h5>
-            <div>
-              <span>{{'家賃: '.$experience[$i]->rent.'円'}}</span>
-              <span>{{'山手線「'.$experience[$i]->where_live.'」'}}</span>
-            </div>
-            <div>
-              <span>{{'学部: '.$experience[$i]->undergraduate}}</span>
-            </div>
-          </div>
+</div>
+<!-- スマホ画面ヘッダー -->
+<div class=" d-sm-block d-md-none row"
+    style="background-image: url('{{ asset('img/header-sumaho.jpg')}}'); background-size: cover; ">
+<div class="col-lg-4 offset-8">
+      <div class="mt-5">
+        <h1>College</h1>
+        <h1>　Living</h1>
+        <p>先輩の一人暮らしの体験談を見て、よりよい大学生活を送るためのお部屋探しサイト</p>
+      </div>
+    </div>
+    
+</div>
+<!-- 物件表示 -->
+<div class="row  d-flex justify-content-center">
+  <div class="col-12 mt-5 ">
+    <div class="center-block">
+      <h1 style="color:#FF4500;" class="text-center">Rent</h1>
+      <p style=" " class="text-center">山手線沿線の物件を確認できます！</p>
+    </div>
+  </div>
+  @for($i=1;$i<=4;$i++)
+  <!-- 物件のパソコン表示 -->
+  <div class="col-lg-4 my-4 mx-5 d-none  d-lg-block   p-0 shadow">
+    <a href="{{ asset('items/'.$i )}}" style="text-decoration:none;">
+      <img src="{{asset('img/item/naisou/'.$item[$i]->item_image1)}}"
+      class="img-fluid"  alt="">
+      <div class="bg-white text-dark pt-2 px-2" style="">
+        <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
+          <strong>{{$item[$i]->name}}</strong>
+        </h6>
+        <div style="font-size:12px;">
+          <ul style="list-style:none; " class="pl-1 py-2">
+            <li>
+              {{'家賃'. number_format($item[$i]->rent).'円'}}/{{'山手線「'.$item[$i]->station.'」'}}/{{'築'.$item[$i]->age.'年'}}
+              /{{'間取り'.$item[$i]->construction}}
+            </li>
+          </ul>
         </div>
       </div>
-    @endfor
+    </a>
   </div>
-  <button type="button" class="btn btn-primary btn-lg">最新体験談へ</button>
+  <!-- 物件スマホ画面 -->
+  <div class="col-sm-10 bg-light text-dark  mt-2 px-0 d-sm-block d-lg-none" style="">
+    <a href="" class="justify-content-start d-flex" style="text-decoration:none;">
+    @if($i%2===0)
+    <img src="{{asset('img/item/naisou/'.$item[$i]->item_image1)}}"
+      class="" style="width:200px;"  alt="">
+      <div class="text-dark">
+      <h6 class="mb-0  border-bottom border-danger pb-2 ">
+      <strong>{{$item[$i]->name}}</strong>
+    </h6>
+    <div style="font-size:12px;">
+      <ul style="list-style:none; " class=" py-2">
+        <li>
+          {{'家賃'. number_format($item[$i]->rent).'円'}}/{{'山手線「'.$item[$i]->station.'」'}}/{{'築'.$item[$i]->age.'年'}}
+          /{{'間取り'.$item[$i]->construction}}
+        </li>
+      </ul>
+    </div>
+      </div>
+    @else
+      <div class="text-dark">
+      <h6 class="mb-0 border-bottom border-danger pb-2 ">
+      <strong>{{$item[$i]->name}}</strong>
+    </h6>
+    <div style="font-size:12px;">
+      <ul style="list-style:none; " class=" py-2">
+        <li>
+          {{'家賃'. number_format($item[$i]->rent).'円'}}/{{'山手線「'.$item[$i]->station.'」'}}/{{'築'.$item[$i]->age.'年'}}
+          /{{'間取り'.$item[$i]->construction}}
+        </li>
+      </ul>
+    </div>
+      </div>
+      <img src="{{asset('img/item/naisou/'.$item[$i]->item_image1)}}"
+      class="" style="width:200px;"  alt="">
+    @endif
+    
+    </a>
+  </div>
+  @endfor
+  <div class="col-12">
+    <div class="center-block d-flex justify-content-center">
+      <a href="{{ asset('items')}}"
+      class="btn btn-outline-danger btn-lg my-4 " tabindex="-1" role="button" aria-disabled="true">
+      Click More
+    </a>
+  </div>
 </div>
-​
-<div class="container">
-  <div>
-    <p  style="text-align:left; font-size:50px;">おすすめ物件</p>
-    <p style="text-align:left;">hogehoge</p>
+</div>
+<!-- 体験談表示 -->
+<div class="row  bg-light d-flex justify-content-center">
+  <div class="col-12 mt-5">
+    <h1  class="text-center" style="color:#FF4500;">Experiences</h1>
+    <p style=" " class="text-center">一人暮らしの体験談を確認して、イメージを膨らませよう！</p>
   </div>
-  <!-- <div class="row"> -->
-  <!-- @for ($i=0;$i<=3;$i++)
-    <img class="col-sm-6" width="300" height="300" src="{{ asset('img/item/naisou/'. $item[$i]->item_image1 )}}" >
-  @endfor -->
-  <!-- </div> -->
-  <div class="row pl-2">
-    @for($i=0;$i<=3;$i++)
-      <div class="col-md-5 m-1 p-0 shadow">
-        <div class="">
-          <img src="{{asset('img/item/naisou/'.$item[$i]->item_image1)}}"
-          class="img-fluid"  alt="">
-          <div class="bg-white" style="">
-            <h5 class="mb-0">{{$item[$i]->name}}</h5>
-            <div>
-              <span>{{'家賃'.$item[$i]->rent.'円'}}</span>
-              <span>{{'山手線「'.$item[$i]->station.'」'}}</span>
-            </div>
-            <div>
-              <span>{{'築'.$item[$i]->age.'年'}}</span>
-              <span>{{'間取り'.$item[$i]->construction}}</span>
-            </div>
-          </div>
+  @for($i=0;$i<=2;$i++)
+  <!-- 体験談パソコン用 -->
+  <div class="col-lg-4  shadow d-none  d-lg-block border-right">
+    <a href="{{ asset('experiences/'.$experience[$i]->id)}}" style="text-decoration:none;">
+      <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
+      class="img-fluid border-bottom" alt="" >
+      <div class="bg-white pt-2 px-2 text-dark " >
+        <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
+          <strong>{{$experience[$i]->college_name}}</strong>
+        </h6>
+        <div class="" style="font-size:12px;">
+          <ul style="list-style:none; " class="pl-1 py-2">
+            <li>
+              <strong>{{'学部: '.$experience[$i]->undergraduate}}</strong>
+            </li>
+            <li>
+              {{'家賃: '.number_format($experience[$i]->rent).'円'}}/{{'山手線「'.$experience[$i]->where_live.'」'}}
+            </li>
+          </ul>
+        </div>
+        <div>
         </div>
       </div>
-    @endfor
+    </a>
   </div>
-  <form  class="form-inline justify-content-center" action="{{asset('experiences/serch')}}" method="post">
-    {{ csrf_field()}}
-    {{method_field('get')}}
-    <div class="form-group" >
-      <input style="width: 300px; height: 50px;" type="text" class="form-control" placeholder="駅名検索" name="college_name" >
+  <!-- 体験談スマホ用 -->
+  <div class="col-sm-10 col-md-10 mt-2 bg-white pt-2 px-2 text-dark d-sm-block d-lg-none " >
+    <a href="" class="justify-content-start d-flex text-dark" style="text-decoration:none;">
+      <img  src="{{ asset('img/college/'. $experience[$i]->image )}}"
+      class=" border-bottom" alt=""style="width:200px;" >
+      <div class="">
+      <h6 class="mb-0 border-bottom border-danger pb-2 pl-1">
+      <strong>{{$experience[$i]->college_name}}</strong>
+    </h6>
+    <div class="" style="font-size:12px;">
+      <ul style="list-style:none; " class="pl-1 py-2">
+        <li>
+          <strong>{{'学部: '.$experience[$i]->undergraduate}}</strong>
+        </li>
+        <li>
+          {{'家賃: '.number_format($experience[$i]->rent).'円'}}/{{'山手線「'.$experience[$i]->where_live.'」'}}
+        </li>
+      </ul>
     </div>
-    <div class="form-group">
-      <button style="height: 50px" type="submit" class="btn btn-primary">検索</button>
-    </div>
-  </form>
+      </div>
+    </a>
+  </div>
+  @endfor
+  <a href="#" class="col-sm-5 btn btn-outline-danger btn-lg my-4" tabindex="-1" role="button" aria-disabled="true">
+    Check More
+  </a>
 </div>
+
+
+<!-- フッター -->
+<div class="row">
+  @component('components.footer')
+  @endcomponent
+</div>
+</div>
+</div>
+
 @endsection

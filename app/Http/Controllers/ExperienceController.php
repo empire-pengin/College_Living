@@ -67,6 +67,7 @@ class ExperienceController extends Controller
     //検索機能
     public function serch(Request $request) {
         $keyword_name = $request->college_name;
+        $all_user = User::all();
         if(!empty($keyword_name)) {
         $query = Experience::query();
         // クエリストリングだけ取得したいならquery()
@@ -78,6 +79,7 @@ class ExperienceController extends Controller
         return view('experiences.serch')->with([
         'experience' => $experience,
         'message' => $message,
+        'all_user' => $all_user
         ]);
     }
 

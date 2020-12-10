@@ -31,7 +31,7 @@
             </label>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">ログインする</button>
+        <button type="submit" class="btn btn-danger btn-outlineb btn-lg btn-block">ログインする</button>
       </form>
     </div>
   </div>
