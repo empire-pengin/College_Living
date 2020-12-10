@@ -18,7 +18,7 @@
   </div>
 
   <!-- フォーム中身 -->
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center p-0 m-0 ">
     <div class="col-lg-8 col-sm-10">
     <!--↑↑件名↑↑-->
     <form method="POST" action="{{asset('experiences/store')}}" enctype="multipart/form-data">
